@@ -10,7 +10,7 @@ resource "github_team_membership" "haproxy-maintainer-1" {
   role     = "maintainer"
 }
 
-resource "github_team_membership" "haproxy-maintainer-1" {
+resource "github_team_membership" "haproxy-maintainer-2" {
   team_id  = "${github_team.haproxy_team.id}"
   username = "rshade"
   role     = "member"
