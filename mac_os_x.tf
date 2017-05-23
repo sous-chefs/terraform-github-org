@@ -7,7 +7,7 @@ resource "github_team" "mac_os_x_team" {
 resource "github_team_membership" "mac_os_x-maintainer-1" {
   team_id  = "${github_team.mac_os_x_team.id}"
   username = "damacus"
-  role     = "member"
+  role     = "maintainer"
 }
 
 resource "github_team_membership" "mac_os_x-maintainer-2" {
