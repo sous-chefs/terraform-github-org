@@ -47,12 +47,6 @@ resource "github_team_membership" "emachnic" {
   role     = "member"
 }
 
-resource "github_team_membership" "fonsecas72" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "fonsecas72"
-  role     = "member"
-}
-
 resource "github_team_membership" "guilhem" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "guilhem"

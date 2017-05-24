@@ -33,11 +33,6 @@ resource "github_membership" "Dylan_Myers" {
   role     = "member"
 }
 
-resource "github_membership" "Hugo_Fonseca" {
-  username = "fonsecas72"
-  role     = "member"
-}
-
 resource "github_membership" "Guilhem_Lettron" {
   username = "guilhem"
   role     = "member"
