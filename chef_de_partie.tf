@@ -125,6 +125,12 @@ resource "github_team_membership" "PierreRambaud" {
   role     = "member"
 }
 
+resource "github_team_membership" "rhealitycheck" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "rhealitycheck"
+  role     = "member"
+}
+
 resource "github_team_membership" "shortdudey123" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "shortdudey123"
