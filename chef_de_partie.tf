@@ -179,6 +179,12 @@ resource "github_team_membership" "svanzoest" {
   role     = "member"
 }
 
+resource "github_team_membership" "ehanlon" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "ehanlon"
+  role     = "member"
+}
+
 # Owners
 resource "github_team_membership" "damacus" {
   team_id  = "${github_team.Chef_de_partie.id}"
