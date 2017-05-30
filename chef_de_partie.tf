@@ -29,6 +29,12 @@ resource "github_team_membership" "BackSlasher" {
   role     = "member"
 }
 
+resource "github_team_membership" "brianhays" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "brianhays"
+  role     = "member"
+}
+
 resource "github_team_membership" "coderanger" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "coderanger"
