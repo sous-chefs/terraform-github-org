@@ -276,6 +276,12 @@ resource "github_team_membership" "kameghamegha" {
   role     = "member"
 }
 
+resource "github_team_membership" "zamedic" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "zamedic"
+  role     = "member"
+}
+
 # Repositories
 
 resource "github_team_repository" "bsdcpio" {
