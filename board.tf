@@ -16,8 +16,8 @@ resource "github_team_membership" "tas50-board" {
   role     = "maintainer"
 }
 
-resource "github_team_membership" "josephholsten-board" {
+resource "github_team_membership" "coderanger-board" {
   team_id  = "${github_team.board.id}"
-  username = "josephholsten"
+  username = "coderanger"
   role     = "maintainer"
 }
