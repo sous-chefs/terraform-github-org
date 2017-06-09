@@ -19,5 +19,5 @@ resource "github_team_membership" "nagios-maintainer-shoekstra" {
 resource "github_team_membership" "nagios-maintainer-tas50" {
   team_id  = "${github_team.nagios_team.id}"
   username = "tas50"
-  role     = "maintainer"
+  role     = "member"
 }
