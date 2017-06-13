@@ -10,6 +10,12 @@ resource "github_team_repository" "nagios_repo" {
   permission = "admin"
 }
 
+resource "github_team_membership" "nagios-maintainer-sbotman" {
+  team_id  = "${github_team.nagios_team.id}"
+  username = "sbotman"
+  role     = "maintainer"
+}
+
 resource "github_team_membership" "nagios-maintainer-shoekstra" {
   team_id  = "${github_team.nagios_team.id}"
   username = "shoekstra"

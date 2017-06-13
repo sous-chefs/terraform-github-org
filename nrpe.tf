@@ -10,6 +10,12 @@ resource "github_team_repository" "nrpe_repo" {
   permission = "admin"
 }
 
+resource "github_team_membership" "nrpe-maintainer-sbotman" {
+  team_id  = "${github_team.nrpe_team.id}"
+  username = "sbotman"
+  role     = "maintainer"
+}
+
 resource "github_team_membership" "nrpe-maintainer-shoekstra" {
   team_id  = "${github_team.nrpe_team.id}"
   username = "shoekstra"

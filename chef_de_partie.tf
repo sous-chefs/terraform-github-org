@@ -252,6 +252,12 @@ resource "github_team_membership" "iennae" {
   role     = "member"
 }
 
+resource "github_team_membership" "sbotman" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "sbotman"
+  role     = "member"
+}
+
 resource "github_team_membership" "shoekstra" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "shoekstra"
