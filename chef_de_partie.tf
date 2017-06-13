@@ -392,12 +392,6 @@ resource "github_team_repository" "sc-mysql" {
   permission = "pull"
 }
 
-resource "github_team_repository" "mariadb" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "mariadb"
-  permission = "pull"
-}
-
 resource "github_team_repository" "mysql_database" {
   team_id    = "${github_team.Chef_de_partie.id}"
   repository = "mysql_database"
