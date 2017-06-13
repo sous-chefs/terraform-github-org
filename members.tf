@@ -197,3 +197,8 @@ resource "github_membership" "zamedic" {
   username = "zamedic"
   role     = "member"
 }
+
+resource "github_membership" "Marta_Paciorkowska" {
+  username = "xamebax"
+  role     = "member"
+}
