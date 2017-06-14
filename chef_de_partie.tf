@@ -409,3 +409,9 @@ resource "github_team_repository" "mac_os_x" {
   repository = "mac_os_x"
   permission = "pull"
 }
+
+resource "github_team_membership" "snkutlu" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "snkutlu"
+  role     = "member"
+}
