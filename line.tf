@@ -16,6 +16,12 @@ resource "github_team_membership" "line-maintainer-2" {
   role     = "maintainer"
 }
 
+resource "github_team_membership" "line-maintainer-3" {
+  team_id  = "${github_team.line_team.id}"
+  username = "MarkGibbons"
+  role     = "maintainer"
+}
+
 resource "github_team_repository" "line_repo" {
   team_id    = "${github_team.line_team.id}"
   repository = "line-cookbook"

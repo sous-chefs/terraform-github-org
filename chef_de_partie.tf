@@ -294,6 +294,12 @@ resource "github_team_membership" "xamebax" {
   role     = "member"
 }
 
+resource "github_team_membership" "MarkGibbons" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "MarkGibbons"
+  role     = "member"
+}
+
 # Repositories
 
 resource "github_team_repository" "bsdcpio" {
