@@ -10,7 +10,7 @@ resource "github_team_membership" "rundeck-maintainer" {
   role     = "maintainer"
 }
 
-resource "github_team_membership" "rundeck-maintainer" {
+resource "github_team_membership" "rundeck-maintainer-2" {
   team_id  = "${github_team.rundeck.id}"
   username = "pcross616"
   role     = "maintainer"
