@@ -4,9 +4,15 @@ resource "github_team" "apache2" {
   privacy     = "closed"
 }
 
-resource "github_team_membership" "apache2-maintainer" {
+resource "github_team_membership" "apache2-maintainer-1" {
   team_id  = "${github_team.apache2.id}"
   username = "svanzoest"
+  role     = "maintainer"
+}
+
+resource "github_team_membership" "apache2-maintainer-2" {
+  team_id  = "${github_team.apache2.id}"
+  username = "tas50"
   role     = "maintainer"
 }
 
