@@ -1,3 +1,12 @@
+module "dhcp" {
+  source         = "modules/repository"
+  name           = "dhcp"
+  description    = "Development repository for the DHCP cookbook"
+  homepage_url   = "https://supermarket.chef.io/cookbooks/dhcp"
+  cookbook_team  = "${github_team.dhcp_team.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
 resource "github_team" "dhcp_team" {
   name        = "dhcp"
   description = "DHCP Cookbook Maintainers"
@@ -14,10 +23,4 @@ resource "github_team_membership" "dhcp-maintainer-2" {
   team_id  = "${github_team.dhcp_team.id}"
   username = "shortdudey123"
   role     = "maintainer"
-}
-
-resource "github_team_repository" "dhcp_repo" {
-  team_id    = "${github_team.dhcp_team.id}"
-  repository = "dhcp"
-  permission = "admin"
 }

@@ -1,3 +1,12 @@
+module "apache2" {
+  source         = "modules/repository"
+  name           = "apache2"
+  description    = "Development repository for the apache2 cookbook"
+  homepage_url   = "https://supermarket.chef.io/cookbooks/apache2"
+  cookbook_team  = "${github_team.apache2.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
 resource "github_team" "apache2" {
   name        = "apache2"
   description = "apache Cookbook Maintainers"
@@ -7,17 +16,11 @@ resource "github_team" "apache2" {
 resource "github_team_membership" "apache2-maintainer-1" {
   team_id  = "${github_team.apache2.id}"
   username = "svanzoest"
-  role     = "maintainer"
+  role     = "member"
 }
 
 resource "github_team_membership" "apache2-maintainer-2" {
   team_id  = "${github_team.apache2.id}"
   username = "tas50"
   role     = "maintainer"
-}
-
-resource "github_team_repository" "apache2_repo" {
-  team_id    = "${github_team.apache2.id}"
-  repository = "apache2"
-  permission = "admin"
 }

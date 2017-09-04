@@ -1,17 +1,20 @@
-resource "github_team" "bsdcpio_team" {
+module "bsdcpio" {
+  source         = "modules/repository"
+  name           = "bsdcpio"
+  description    = "Development repository for the bsdcpio cookbook"
+  homepage_url   = "https://supermarket.chef.io/cookbooks/bsdcpio"
+  cookbook_team  = "${github_team.bsdcpio.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
+resource "github_team" "bsdcpio" {
   name        = "bsdcpio"
   description = "BSDCPIO Cookbook Maintainers"
   privacy     = "closed"
 }
 
 resource "github_team_membership" "bsdcpio-maintainer-1" {
-  team_id  = "${github_team.bsdcpio_team.id}"
+  team_id  = "${github_team.bsdcpio.id}"
   username = "josephholsten"
   role     = "maintainer"
-}
-
-resource "github_team_repository" "bsdcpio_repo" {
-  team_id    = "${github_team.bsdcpio_team.id}"
-  repository = "bsdcpio"
-  permission = "admin"
 }

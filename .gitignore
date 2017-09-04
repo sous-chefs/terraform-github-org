@@ -1,2 +1,4 @@
 # Compiled files
 terraform.tfvars
+*.backup
+.terraform

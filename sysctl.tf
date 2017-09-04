@@ -19,5 +19,5 @@ resource "github_team_membership" "sysctl-maintainer-2" {
 resource "github_team_repository" "sysctl_repo" {
   team_id    = "${github_team.sysctl_team.id}"
   repository = "sysctl"
-  permission = "admin"
+  permission = "pull"
 }
