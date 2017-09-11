@@ -1,17 +1,20 @@
-resource "github_team" "graphite_team" {
+module "graphite" {
+  source         = "modules/repository"
+  name           = "graphite"
+  description    = "Development repository for the Graphite cookbook"
+  homepage_url   = "https://supermarket.chef.io/cookbooks/graphite"
+  cookbook_team  = "${github_team.graphite.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
+resource "github_team" "graphite" {
   name        = "graphite"
   description = "Graphite Cookbook Maintainers"
   privacy     = "closed"
 }
 
 resource "github_team_membership" "graphite-maintainer-1" {
-  team_id  = "${github_team.graphite_team.id}"
+  team_id  = "${github_team.graphite.id}"
   username = "tas50"
   role     = "maintainer"
-}
-
-resource "github_team_repository" "graphite_repo" {
-  team_id    = "${github_team.graphite_team.id}"
-  repository = "graphite"
-  permission = "admin"
 }
