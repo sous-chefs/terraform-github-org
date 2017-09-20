@@ -1,20 +1,16 @@
-resource "github_repository" "mysql_database" {
-  name        = "mysql_database"
-  description = "Sous Chefs MySQL Cookbook"
-  has_issues  = "true"
-  has_wiki    = "true"
+module "mysql_database" {
+  source         = "modules/repository"
+  name           = "mysql_database"
+  description    = "Development repository for the MySQL Database cookbook"
+  homepage_url   = ""
+  cookbook_team  = "${github_team.mysql_database_team.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
 }
 
 resource "github_team" "mysql_database_team" {
   name        = "mysql_database"
   description = "mysql_database Cookbook Maintainers"
   privacy     = "closed"
-}
-
-resource "github_team_repository" "mysql_database_repo" {
-  team_id    = "${github_team.mysql_database_team.id}"
-  repository = "mysql_database"
-  permission = "admin"
 }
 
 resource "github_team_membership" "mysql_database-maintainer-1" {
