@@ -1,3 +1,8 @@
+resource "github_membership" "atheiman" {
+  username = "atheiman"
+  role     = "member"
+}
+
 resource "github_membership" "atomic-penguin" {
   username = "atomic-penguin"
   role     = "member"
