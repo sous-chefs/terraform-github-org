@@ -5,6 +5,12 @@ resource "github_team" "Chef_de_partie" {
 }
 
 # Memberships
+resource "github_team_membership" "atheiman" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "atheiman"
+  role     = "member"
+}
+
 resource "github_team_membership" "atomic-penguin" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "atomic-penguin"
