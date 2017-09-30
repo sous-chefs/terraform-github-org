@@ -1,5 +1,12 @@
 variable "name" {}
-variable "description" {}
+variable "description" {
+  default = ""
+}
+
+locals {
+  default_description = "Development repository for the ${var.name} cookbook"
+  description         = "${var.description == "" ? local.default_description : var.description }"
+}
 
 variable "cookbook_team" {
   description = "ID of the team that should own the repo, gives push access"
@@ -20,4 +27,13 @@ variable "enforce_admins" {
 
 variable "require_ci_pass" {
   default = true
+}
+
+variable "has_wiki" {
+  default = false
+}
+
+locals {
+  default_homepage_url = "https://supermarket.chef.io/cookbooks/${var.name}"
+  homepage_url         = "${var.homepage_url == "" ? local.default_homepage_url : var.homepage_url}"
 }

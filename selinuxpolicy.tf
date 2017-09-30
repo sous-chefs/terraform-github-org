@@ -1,3 +1,10 @@
+module "selinuxpolicy" {
+  source         = "modules/repository"
+  name           = "selinux_policy"
+  cookbook_team  = "${github_team.selinuxpolicy.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
 resource "github_team" "selinuxpolicy" {
   name        = "selinuxpolicy"
   description = "selinuxpolicy Cookbook Maintainers"

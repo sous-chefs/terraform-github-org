@@ -2,7 +2,6 @@ module "mysql_database" {
   source         = "modules/repository"
   name           = "mysql_database"
   description    = "Development repository for the MySQL Database cookbook"
-  homepage_url   = ""
   cookbook_team  = "${github_team.mysql_database_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

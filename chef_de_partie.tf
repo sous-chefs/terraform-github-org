@@ -300,122 +300,6 @@ resource "github_team_membership" "MarkGibbons" {
   role     = "member"
 }
 
-# Repositories
-
-resource "github_team_repository" "bsdcpio" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "bsdcpio"
-  permission = "pull"
-}
-
-resource "github_team_repository" "chef-compliance" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "chef-compliance"
-  permission = "pull"
-}
-
-resource "github_team_repository" "dhcp" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "dhcp"
-  permission = "pull"
-}
-
-resource "github_team_repository" "haproxy" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "haproxy"
-  permission = "pull"
-}
-
-resource "github_team_repository" "meta" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "meta"
-  permission = "admin"
-}
-
-resource "github_team_repository" "mongodb" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "mongodb"
-  permission = "pull"
-}
-
-resource "github_team_repository" "nano" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "nano"
-  permission = "pull"
-}
-
-resource "github_team_repository" "ossec" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "ossec"
-  permission = "pull"
-}
-
-resource "github_team_repository" "postgresql" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "postgresql"
-  permission = "pull"
-}
-
-resource "github_team_repository" "smartmontools" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "smartmontools"
-  permission = "pull"
-}
-
-resource "github_team_repository" "unbound" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "unbound"
-  permission = "pull"
-}
-
-resource "github_team_repository" "ruby_build" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "ruby_build"
-  permission = "pull"
-}
-
-resource "github_team_repository" "ruby_rbenv" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "ruby_rbenv"
-  permission = "pull"
-}
-
-resource "github_team_repository" "varnish" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "varnish"
-  permission = "pull"
-}
-
-resource "github_team_repository" "swap" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "swap"
-  permission = "pull"
-}
-
-resource "github_team_repository" "sc-mysql" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "sc-mysql"
-  permission = "pull"
-}
-
-resource "github_team_repository" "mysql_database" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "mysql_database"
-  permission = "pull"
-}
-
-resource "github_team_repository" "line" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "line-cookbook"
-  permission = "pull"
-}
-
-resource "github_team_repository" "mac_os_x" {
-  team_id    = "${github_team.Chef_de_partie.id}"
-  repository = "mac_os_x"
-  permission = "pull"
-}
-
 resource "github_team_membership" "snkutlu" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "snkutlu"
@@ -431,5 +315,11 @@ resource "github_team_membership" "ev0ldave" {
 resource "github_team_membership" "gsreynolds" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "gsreynolds"
+  role     = "member"
+}
+
+resource "github_team_membership" "atheiman" {
+  team_id  = "${github_team.Chef_de_partie.id}"
+  username = "atheiman"
   role     = "member"
 }

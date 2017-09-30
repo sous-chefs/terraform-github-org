@@ -2,7 +2,6 @@ module "mac_os_x" {
   source         = "modules/repository"
   name           = "mac_os_x"
   description    = "Development repository for the mac_os_x cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/mac_os_x"
   cookbook_team  = "${github_team.dhcp_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

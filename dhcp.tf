@@ -2,7 +2,6 @@ module "dhcp" {
   source         = "modules/repository"
   name           = "dhcp"
   description    = "Development repository for the DHCP cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/dhcp"
   cookbook_team  = "${github_team.dhcp_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

@@ -1,14 +1,9 @@
-resource "github_repository" "sc-mysql" {
-  name        = "sc-mysql"
-  description = "Sous Chefs MySQL Cookbook"
-  has_issues  = "true"
-  has_wiki    = "true"
-}
-
-resource "github_team_repository" "sc-mysql_repo" {
-  team_id    = "${github_team.sc-mysql_team.id}"
-  repository = "sc-mysql"
-  permission = "admin"
+module "sc-mysql" {
+  source         = "modules/repository"
+  name           = "sc-mysql"
+  description    = "Sous Chefs MySQL Cookbook"
+  cookbook_team  = "${github_team.sc-mysql_team.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
 }
 
 resource "github_team" "sc-mysql_team" {

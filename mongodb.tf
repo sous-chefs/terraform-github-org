@@ -2,7 +2,6 @@ module "mongodb" {
   source         = "modules/repository"
   name           = "mongodb"
   description    = "Development repository for the mongodb cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/mongodb"
   cookbook_team  = "${github_team.dhcp_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

@@ -2,7 +2,6 @@ module "haproxy" {
   source         = "modules/repository"
   name           = "haproxy"
   description    = "Development repository for the HAProxy cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/haproxy"
   cookbook_team  = "${github_team.haproxy.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

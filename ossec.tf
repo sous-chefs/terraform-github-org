@@ -1,13 +1,15 @@
+module "ossec" {
+  source         = "modules/repository"
+  name           = "ossec"
+  description    = "Development repository for the ossec cookbook"
+  cookbook_team  = "${github_team.ossec_team.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
 resource "github_team" "ossec_team" {
   name        = "ossec"
   description = "ossec Cookbook Maintainers"
   privacy     = "closed"
-}
-
-resource "github_team_repository" "ossec_repo" {
-  team_id    = "${github_team.ossec_team.id}"
-  repository = "ossec"
-  permission = "admin"
 }
 
 resource "github_team_membership" "ossec-maintainer-1" {

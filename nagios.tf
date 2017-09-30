@@ -1,10 +1,9 @@
 module "nagios" {
   source         = "modules/repository"
   name           = "nagios"
-  description    = "Development repository for the Nagios cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/nagios"
   cookbook_team  = "${github_team.nagios_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
+  has_wiki       = true
 }
 
 resource "github_team" "nagios_team" {

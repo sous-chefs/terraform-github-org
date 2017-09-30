@@ -1,3 +1,10 @@
+module "sysctl" {
+  source         = "modules/repository"
+  name           = "sysctl"
+  cookbook_team  = "${github_team.sysctl_team.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+}
+
 resource "github_team" "sysctl_team" {
   name        = "sysctl"
   description = "sysctl Cookbook Maintainers"
@@ -14,10 +21,4 @@ resource "github_team_membership" "sysctl-maintainer-2" {
   team_id  = "${github_team.apache2.id}"
   username = "tas50"
   role     = "maintainer"
-}
-
-resource "github_team_repository" "sysctl_repo" {
-  team_id    = "${github_team.sysctl_team.id}"
-  repository = "sysctl"
-  permission = "pull"
 }
