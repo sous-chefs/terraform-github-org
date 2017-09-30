@@ -1,7 +1,6 @@
 module "graphite" {
   source         = "modules/repository"
   name           = "graphite"
-  description    = "Development repository for the Graphite cookbook"
   cookbook_team  = "${github_team.graphite.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

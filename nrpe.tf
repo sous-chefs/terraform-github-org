@@ -2,7 +2,6 @@ module "nrpe" {
   source         = "modules/repository"
   name           = "nrpe"
   description    = "Chef cookbook to install Nagios NRPE client (was previously part of the Nagios cookbook)"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/nrpe"
   cookbook_team  = "${github_team.nrpe_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

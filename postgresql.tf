@@ -1,8 +1,6 @@
 module "postgresql" {
   source         = "modules/repository"
   name           = "postgresql"
-  description    = "Development repository for the postgresql cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/postgresql"
   cookbook_team  = "${github_team.postgresql_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

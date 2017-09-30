@@ -1,7 +1,6 @@
 module "filesystem" {
   source         = "modules/repository"
   name           = "filesystem"
-  description    = "Development repository for the Filesystem cookbook"
   cookbook_team  = "${github_team.filesystem.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

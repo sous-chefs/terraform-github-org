@@ -1,8 +1,6 @@
 module "nano" {
   source         = "modules/repository"
   name           = "nano"
-  description    = "Development repository for the Nano cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/nano"
   cookbook_team  = "${github_team.nano_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

@@ -1,7 +1,6 @@
 module "chef-compliance" {
   source         = "modules/repository"
   name           = "chef-compliance"
-  description    = "Development repository for the chef-compliance cookbook"
   cookbook_team  = "${github_team.chef-compliance.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

@@ -1,7 +1,6 @@
 module "bsdcpio" {
   source         = "modules/repository"
   name           = "bsdcpio"
-  description    = "Development repository for the bsdcpio cookbook"
   cookbook_team  = "${github_team.bsdcpio.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

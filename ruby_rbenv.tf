@@ -1,7 +1,6 @@
 module "ruby_rbenv" {
   source         = "modules/repository"
   name           = "ruby_rbenv"
-  description    = "Development repository for the ruby_rbenv cookbook"
   cookbook_team  = "${github_team.ruby_rbenv.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

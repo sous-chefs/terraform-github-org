@@ -1,7 +1,6 @@
 module "sc-foodcritic-rules" {
   source         = "modules/repository"
   name           = "sc-foodcritic-rules"
-  description    = "Development repository for the sc-foodcritic-rules cookbook"
   cookbook_team  = "${github_team.sc-foodcritic-rules.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

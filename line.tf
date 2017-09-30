@@ -1,7 +1,6 @@
 module "line" {
   source         = "modules/repository"
   name           = "line-cookbook"
-  description    = "Development repository for the line cookbook"
   cookbook_team  = "${github_team.line.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

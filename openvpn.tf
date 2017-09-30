@@ -1,8 +1,6 @@
 module "openvpn" {
   source         = "modules/repository"
   name           = "openvpn"
-  description    = "Development repository for the openvpn cookbook"
-  homepage_url   = "https://supermarket.chef.io/cookbooks/openvpn"
   cookbook_team  = "${github_team.openvpn_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

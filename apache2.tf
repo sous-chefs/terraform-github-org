@@ -1,7 +1,6 @@
 module "apache2" {
   source         = "modules/repository"
   name           = "apache2"
-  description    = "Development repository for the apache2 cookbook"
   cookbook_team  = "${github_team.apache2.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

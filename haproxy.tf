@@ -1,7 +1,6 @@
 module "haproxy" {
   source         = "modules/repository"
   name           = "haproxy"
-  description    = "Development repository for the HAProxy cookbook"
   cookbook_team  = "${github_team.haproxy.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }

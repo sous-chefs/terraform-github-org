@@ -1,7 +1,6 @@
 module "ossec" {
   source         = "modules/repository"
   name           = "ossec"
-  description    = "Development repository for the ossec cookbook"
   cookbook_team  = "${github_team.ossec_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
 }
