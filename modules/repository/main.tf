@@ -11,7 +11,6 @@ resource "github_repository" "repository" {
   allow_rebase_merge = true
   has_downloads      = false
   auto_init          = false
-  default_branch     = "master"
 }
 
 resource "github_branch_protection" "repository_master" {
