@@ -1,7 +1,7 @@
 resource "github_issue_label" "jump_in" {
   repository = "${github_repository.repository.name}"
   name       = "good first issue"
-  color      = "35e02e"
+  color      = "159818"
 }
 
 resource "github_issue_label" "feature_request" {
@@ -13,7 +13,7 @@ resource "github_issue_label" "feature_request" {
 resource "github_issue_label" "bug" {
   repository = "${github_repository.repository.name}"
   name       = "Type: Bug"
-  color      = "9b1d20"
+  color      = "b60205"
 }
 
 resource "github_issue_label" "documentation" {
@@ -31,7 +31,7 @@ resource "github_issue_label" "maintenance" {
 resource "github_issue_label" "high" {
   repository = "${github_repository.repository.name}"
   name       = "Priority: High"
-  color      = "ad4648"
+  color      = "b60205"
 }
 
 resource "github_issue_label" "medium" {
@@ -43,7 +43,7 @@ resource "github_issue_label" "medium" {
 resource "github_issue_label" "low" {
   repository = "${github_repository.repository.name}"
   name       = "Priority: Low"
-  color      = "d19899"
+  color      = "c2e0c6"
 }
 
 resource "github_issue_label" "blocked" {
@@ -55,11 +55,23 @@ resource "github_issue_label" "blocked" {
 resource "github_issue_label" "in_progress" {
   repository = "${github_repository.repository.name}"
   name       = "Status: In Progress"
-  color      = "5d6d53"
+  color      = "159818"
 }
 
 resource "github_issue_label" "on_hold" {
   repository = "${github_repository.repository.name}"
   name       = "Status: On Hold"
   color      = "675b28"
+}
+
+resource "github_issue_label" "pending_feedback" {
+  repository = "${github_repository.repository.name}"
+  name       = "Status: Pending Contributor"
+  color      = "191919"
+}
+
+resource "github_issue_label" "duplicate" {
+  repository = "${github_repository.repository.name}"
+  name       = "Duplicate"
+  color      = "cccccc"
 }
