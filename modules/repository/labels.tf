@@ -1,13 +1,20 @@
-resource "github_issue_label" "jump_in" {
+resource "github_issue_label" "first_issue" {
   repository = "${github_repository.repository.name}"
   name       = "good first issue"
   color      = "159818"
 }
 
+resource "github_issue_label" "help_wanted" {
+  repository = "${github_repository.repository.name}"
+  name       = "help wanted"
+  color      = "159818"
+}
+
+
 resource "github_issue_label" "feature_request" {
   repository = "${github_repository.repository.name}"
   name       = "Type: Feature Request"
-  color      = "cbefb6"
+  color      = "86B7E9"
 }
 
 resource "github_issue_label" "bug" {
