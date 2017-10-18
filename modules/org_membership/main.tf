@@ -48,6 +48,11 @@ resource "github_membership" "Jameson" {
   role     = "member"
 }
 
+resource "github_membership" "JonathanTron" {
+  username = "JonathanTron"
+  role     = "member"
+}
+
 resource "github_membership" "Joshua_Spiewak" {
   username = "jspiewak"
   role     = "member"
