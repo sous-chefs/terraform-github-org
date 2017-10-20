@@ -14,5 +14,5 @@ resource "github_team" "mariadb" {
 resource "github_team_membership" "mariadb-shoekstra" {
   team_id  = "${github_team.mariadb.id}"
   username = "shoekstra"
-  role     = "maintainer"
+  role     = "owner"
 }
