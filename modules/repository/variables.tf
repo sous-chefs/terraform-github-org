@@ -34,6 +34,10 @@ variable "has_wiki" {
   default = false
 }
 
+variable "team_permission" {
+  default = "push"
+}
+
 locals {
   default_homepage_url = "https://supermarket.chef.io/cookbooks/${var.name}"
   homepage_url         = "${var.homepage_url == "" ? local.default_homepage_url : var.homepage_url}"
