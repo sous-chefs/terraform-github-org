@@ -33,11 +33,11 @@ resource "github_branch_protection" "repository_master" {
 resource "github_team_repository" "repository_everyone" {
   team_id    = "${var.chef_de_partie}"
   repository = "${github_repository.repository.name}"
-  permission = "pull"
+  permission = "push"
 }
 
 resource "github_team_repository" "restricted_access" {
   team_id    = "${var.cookbook_team}"
   repository = "${github_repository.repository.name}"
-  permission = "push"
+  permission = "${var.team_permission}"
 }

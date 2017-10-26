@@ -1,8 +1,9 @@
 module "mariadb" {
-  source         = "modules/repository"
-  name           = "mariadb"
-  cookbook_team  = "${github_team.mariadb.id}"
-  chef_de_partie = "${github_team.Chef_de_partie.id}"
+  source          = "modules/repository"
+  name            = "mariadb"
+  cookbook_team   = "${github_team.mariadb.id}"
+  chef_de_partie  = "${github_team.Chef_de_partie.id}"
+  team_permission = "admin"
 }
 
 resource "github_team" "mariadb" {
