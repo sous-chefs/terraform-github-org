@@ -16,9 +16,3 @@ resource "github_team_membership" "mac_os_x-maintainer-1" {
   username = "damacus"
   role     = "maintainer"
 }
-
-resource "github_team_membership" "mac_os_x-maintainer-2" {
-  team_id  = "${github_team.mac_os_x.id}"
-  username = "kameghamegha"
-  role     = "maintainer"
-}
