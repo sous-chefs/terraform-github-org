@@ -13,11 +13,6 @@ resource "github_membership" "Joseph_Anthony_Pasquale_Holsten" {
   role     = "admin"
 }
 
-resource "github_membership" "Jacob_McCann" {
-  username = "jmccann"
-  role     = "admin"
-}
-
 resource "github_membership" "Pierce_Moore" {
   username = "rex"
   role     = "admin"
