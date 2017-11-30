@@ -10,7 +10,6 @@ resource "github_issue_label" "help_wanted" {
   color      = "159818"
 }
 
-
 resource "github_issue_label" "feature_request" {
   repository = "${github_repository.repository.name}"
   name       = "Type: Feature Request"
