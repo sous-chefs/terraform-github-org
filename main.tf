@@ -11,6 +11,4 @@ terraform {
   backend "atlas" {
     name = "sous-chefs/terraform-github-org"
   }
-
-  required_version = "0.10.7"
 }
