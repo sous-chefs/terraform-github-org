@@ -247,7 +247,19 @@ resource "github_membership" "mateusduboli" {
   username = "mateusduboli"
   role     = "member"
 }
+
 resource "github_membership" "ibata" {
   username = "ibata"
   role     = "member"
 }
+
+resource "github_membership" "diurnalist" {
+  username = "diurnalist"
+  role     = "member"
+}
+
+resource "github_membership" "kitchen-porter" {
+  username = "kitchen-porter"
+  role = "member"
+}
+
