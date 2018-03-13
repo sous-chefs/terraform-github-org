@@ -149,12 +149,6 @@ resource "github_team_membership" "thommay" {
   role     = "member"
 }
 
-resource "github_team_membership" "bkconrad" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "bkconrad"
-  role     = "member"
-}
-
 resource "github_team_membership" "someara" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "someara"
@@ -195,12 +189,6 @@ resource "github_team_membership" "ehanlon" {
 resource "github_team_membership" "damacus" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "damacus"
-  role     = "maintainer"
-}
-
-resource "github_team_membership" "jmccann" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "jmccann"
   role     = "maintainer"
 }
 

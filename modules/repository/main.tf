@@ -20,11 +20,12 @@ resource "github_branch_protection" "repository_master" {
 
   required_status_checks {
     strict   = "${var.require_ci_pass}"
-    contexts = ["continuous-integration/travis-ci"]
+    contexts = ["${var.status_checks}"]
   }
 
   required_pull_request_reviews {
-    dismiss_stale_reviews = true
+    dismiss_stale_reviews      = "${var.dismiss_stale_reviews}"
+    require_code_owner_reviews = "${var.require_code_owner_reviews}"
   }
 
   depends_on = ["github_repository.repository"]
@@ -33,7 +34,7 @@ resource "github_branch_protection" "repository_master" {
 resource "github_team_repository" "repository_everyone" {
   team_id    = "${var.chef_de_partie}"
   repository = "${github_repository.repository.name}"
-  permission = "push"
+  permission = "${var.everyone_permission}"
 }
 
 resource "github_team_repository" "restricted_access" {

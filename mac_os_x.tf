@@ -1,8 +1,11 @@
 module "mac_os_x" {
-  source         = "modules/repository"
-  name           = "mac_os_x"
-  cookbook_team  = "${github_team.dhcp_team.id}"
-  chef_de_partie = "${github_team.Chef_de_partie.id}"
+  source              = "modules/repository"
+  name                = "mac_os_x"
+  cookbook_team       = "${github_team.dhcp_team.id}"
+  team_permission     = "pull"
+  chef_de_partie      = "${github_team.Chef_de_partie.id}"
+  everyone_permission = "pull"
+  description         = "This cookbook has been deprecated"
 }
 
 resource "github_team" "mac_os_x" {
