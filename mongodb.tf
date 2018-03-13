@@ -3,6 +3,7 @@ module "mongodb" {
   name           = "mongodb"
   cookbook_team  = "${github_team.dhcp_team.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
+  homepage_url   = "https://supermarket.chef.io/cookbooks/sc-mongodb"
 }
 
 resource "github_team" "mongodb" {

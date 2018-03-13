@@ -18,11 +18,6 @@ resource "github_membership" "BackSlasher" {
   role     = "member"
 }
 
-resource "github_membership" "Bryan_Conrad" {
-  username = "bkconrad"
-  role     = "member"
-}
-
 resource "github_membership" "brianhays" {
   username = "brianhays"
   role     = "member"
@@ -248,14 +243,9 @@ resource "github_membership" "mateusduboli" {
   role     = "member"
 }
 
-resource "github_membership" "diurnalist" {
-  username = "diurnalist"
-  role     = "member"
-}
-
 resource "github_membership" "kitchen-porter" {
   username = "kitchen-porter"
-  role = "member"
+  role     = "member"
 }
 
 resource "github_membership" "jeffbyrnes" {
