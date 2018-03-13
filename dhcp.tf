@@ -11,12 +11,6 @@ resource "github_team" "dhcp_team" {
   privacy     = "closed"
 }
 
-resource "github_team_membership" "dhcp-maintainer-1" {
-  team_id  = "${github_team.dhcp_team.id}"
-  username = "jmccann"
-  role     = "maintainer"
-}
-
 resource "github_team_membership" "dhcp-maintainer-2" {
   team_id  = "${github_team.dhcp_team.id}"
   username = "shortdudey123"

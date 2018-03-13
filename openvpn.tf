@@ -16,3 +16,9 @@ resource "github_team_membership" "openvpn-maintainer-1" {
   username = "flaccid"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "openvpn-maintainer-2" {
+  team_id  = "${github_team.openvpn_team.id}"
+  username = "jeffbyrnes"
+  role     = "maintainer"
+}
