@@ -29,3 +29,9 @@ resource "github_team_membership" "mongodb-maintainer-3" {
   username = "mateusduboli"
   role     = "maintainer"
 }
+
+  resource "github_team_membership" "mongodb-maintainer-4" {
+  team_id  = "${github_team.mongodb.id}"
+  username = "swalberg"
+  role     = "maintainer"
+}
