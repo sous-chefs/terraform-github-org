@@ -10,7 +10,7 @@ provider "github" {
 
 terraform {
   backend "s3" {
-    bucket = "sous-chefs.terraform"
+    bucket = "sous-chefs.terraform-state"
     key    = "terraform.tfstate"
     region = "eu-west-1"
   }
