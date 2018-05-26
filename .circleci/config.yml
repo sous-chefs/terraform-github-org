@@ -9,8 +9,8 @@ jobs:
           terraform init
           terraform plan -out sous.plan
       - persist_to_workspace:
-        root: .
-        paths: .
+          root: .
+          paths: .
   apply:
     docker:
       - image: hashicorp/terraform
