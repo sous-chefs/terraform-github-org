@@ -7,7 +7,10 @@ jobs:
       - checkout
       - run: |
           terraform init
-          terraform plan
+          terraform plan -out sous.plan
+      - persist_to_workspace:
+        root: .
+        paths: .
   apply:
     docker:
       - image: hashicorp/terraform
@@ -15,7 +18,9 @@ jobs:
       - checkout
       - run:
           terraform init
-          terraform apply --auto-approve
+          terraform apply sous.plan --auto-approve
+      - attach_workspace:
+          at: .
 
 workflows:
   version: 2
