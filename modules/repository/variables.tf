@@ -60,3 +60,7 @@ variable "dismiss_stale_reviews" {
 variable "require_code_owner_reviews" {
   default = false
 }
+
+variable "archived" {
+  default = false
+}

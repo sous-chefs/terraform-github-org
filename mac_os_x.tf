@@ -6,6 +6,7 @@ module "mac_os_x" {
   chef_de_partie      = "${github_team.Chef_de_partie.id}"
   everyone_permission = "pull"
   description         = "This cookbook has been deprecated"
+  archived            = "true"
 }
 
 resource "github_team" "mac_os_x" {
