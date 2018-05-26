@@ -21,3 +21,9 @@ resource "github_team_membership" "coderanger-board" {
   username = "coderanger"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "kitchen-porter-board" {
+  team_id  = "${github_team.board.id}"
+  username = "kitchen-porter"
+  role     = "maintainer"
+}

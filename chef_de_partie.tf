@@ -29,12 +29,6 @@ resource "github_team_membership" "BackSlasher" {
   role     = "member"
 }
 
-resource "github_team_membership" "brianhays" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "brianhays"
-  role     = "member"
-}
-
 resource "github_team_membership" "coderanger" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "coderanger"
@@ -237,12 +231,6 @@ resource "github_team_membership" "RyanJarv" {
 resource "github_team_membership" "iennae" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "iennae"
-  role     = "member"
-}
-
-resource "github_team_membership" "sbotman" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "sbotman"
   role     = "member"
 }
 
