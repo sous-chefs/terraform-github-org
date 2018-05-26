@@ -24,7 +24,7 @@ jobs:
 
 workflows:
   version: 2
-  plan_and_apply:
+  build:
     jobs:
       - plan:
           context: Terraform
@@ -32,21 +32,23 @@ workflows:
           type: approval
           requires:
             - plan
-          branches:
-              only:
-                - master
+          filters:
+            branches:
+                only:
+                  - master
       - apply:
           requires:
             - hold
           context: Terraform
-          branches:
-              only:
-                - master
-  nightly:
-      triggers:
-        - schedule:
-            cron: "0 0 * * *"
-            filters:
-              branches:
+          filters:
+            branches:
                 only:
                   - master
+    nightly:
+        triggers:
+          - schedule:
+              cron: "0 0 * * *"
+              filters:
+                branches:
+                  only:
+                    - master
