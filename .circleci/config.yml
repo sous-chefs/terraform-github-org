@@ -16,7 +16,7 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - run:
+      - run: |
           terraform init
           terraform apply sous.plan --auto-approve
       - attach_workspace:
