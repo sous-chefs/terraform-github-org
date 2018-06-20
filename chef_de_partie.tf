@@ -167,12 +167,6 @@ resource "github_team_membership" "evan2645" {
   role     = "member"
 }
 
-resource "github_team_membership" "svanzoest" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "svanzoest"
-  role     = "member"
-}
-
 resource "github_team_membership" "ehanlon" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "ehanlon"
