@@ -6,20 +6,20 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Terraform Plan
-        command: |
-          terraform init
-          terraform plan
+          name: Terraform Plan
+          command: |
+            terraform init
+            terraform plan
   apply:
     docker:
       - image: hashicorp/terraform
     steps:
       - checkout
       - run:
-        name: Terraform Apply
-        command: |
-          terraform init
-          terraform apply --auto-approve
+          name: Terraform Apply
+          command: |
+            terraform init
+            terraform apply --auto-approve
 
 workflows:
   version: 2
