@@ -5,7 +5,9 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - run: |
+      - run:
+        name: Terraform Plan
+        command: |
           terraform init
           terraform plan
   apply:
@@ -13,7 +15,9 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - run: |
+      - run:
+        name: Terraform Apply
+        command: |
           terraform init
           terraform apply --auto-approve
 
