@@ -7,20 +7,15 @@ jobs:
       - checkout
       - run: |
           terraform init
-          terraform plan -out sous.plan
-      - persist_to_workspace:
-          root: .
-          paths: .
+          terraform plan
   apply:
     docker:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - attach_workspace:
-          at: .
       - run: |
           terraform init
-          terraform apply --auto-approve sous.plan
+          terraform apply --auto-approve
 
 workflows:
   version: 2
@@ -28,17 +23,11 @@ workflows:
     jobs:
       - plan:
           context: Terraform
-      - hold:
-          type: approval
-          requires:
-            - plan
           filters:
             branches:
-                only:
+                ignore:
                   - master
       - apply:
-          requires:
-            - hold
           context: Terraform
           filters:
             branches:
