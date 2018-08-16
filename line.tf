@@ -1,6 +1,6 @@
 module "line" {
   source         = "modules/repository"
-  name           = "line-cookbook"
+  name           = "line"
   description    = "Development repository for the line cookbook"
   homepage_url   = "https://supermarket.chef.io/cookbooks/line"
   cookbook_team  = "${github_team.line.id}"
