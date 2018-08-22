@@ -39,6 +39,10 @@ variable "has_wiki" {
   default = false
 }
 
+variable "has_projects" {
+  default = true
+}
+
 variable "team_permission" {
   default = "push"
 }
@@ -63,4 +67,14 @@ variable "require_code_owner_reviews" {
 
 variable "archived" {
   default = false
+}
+
+locals {
+  default_topics = ["chef", "chef-cookbook", "chef-resource", "${var.name}"]
+  topics         = "${concat(local.default_topics, var.additional_topics)}"
+}
+
+variable "additional_topics" {
+  type    = "list"
+  default = []
 }

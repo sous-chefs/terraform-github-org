@@ -18,7 +18,7 @@ resource "github_team_membership" "mariadb-shoekstra" {
   role     = "maintainer"
 }
 
-  resource "github_team_membership" "mariadb-sinfomicien" {
+resource "github_team_membership" "mariadb-sinfomicien" {
   team_id  = "${github_team.mariadb.id}"
   username = "sinfomicien"
   role     = "maintainer"

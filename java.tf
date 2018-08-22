@@ -1,8 +1,8 @@
 module "java" {
-  source              = "modules/repository"
-  name                = "java"
-  cookbook_team       = "${github_team.gpg_team.id}"
-  chef_de_partie      = "${github_team.Chef_de_partie.id}"
+  source         = "modules/repository"
+  name           = "java"
+  cookbook_team  = "${github_team.gpg_team.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
 }
 
 resource "github_team" "java" {
