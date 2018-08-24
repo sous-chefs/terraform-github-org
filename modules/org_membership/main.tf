@@ -3,6 +3,11 @@ resource "github_membership" "atomic-penguin" {
   role     = "member"
 }
 
+resource "github_membership" "TD-4242" {
+  username = "TD-4242"
+  role     = "member"
+}
+
 resource "github_membership" "atrull" {
   username = "atrull"
   role     = "member"
