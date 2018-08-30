@@ -11,7 +11,6 @@ resource "github_repository" "repository" {
   allow_squash_merge = true
   allow_rebase_merge = true
   has_downloads      = false
-  auto_init          = false
   archived           = "${var.archived}"
   topics             = "${local.topics}"
 }
