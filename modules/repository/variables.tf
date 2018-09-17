@@ -78,3 +78,20 @@ variable "additional_topics" {
   type    = "list"
   default = []
 }
+
+variable "auto_init" {
+  default = true
+  description = <<DESCRIPTION
+  This is an option that initializes the repo, it defaults to true. If it is set
+  to false then it will not enable branch protection. The only use cases where
+  you might want this is to create a project based on another project such as
+  needing to use the import api or doing a bare clone. This setting only really
+  applies (from github api perspective) when the repo is initially created,
+  however as we can only set up branch protection if the repo has been initialized
+  with the master branch we use it as well to control branch protections being
+  enabled. If you need to handle one of these edgecases you should set `auto_init`
+  to false initially so the repo can be created. After its been created and
+  commits/hostory migrated (be it bare clone or import api) you would then set
+  this to true which should enable branch protections.
+DESCRIPTION
+}
