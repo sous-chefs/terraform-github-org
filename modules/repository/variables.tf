@@ -32,7 +32,7 @@ variable "require_ci_pass" {
 
 variable "status_checks" {
   type    = "list"
-  default = ["continuous-integration/travis-ci"]
+  default = ["ci/circleci: lint"]
 }
 
 variable "has_wiki" {
