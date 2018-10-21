@@ -10,6 +10,12 @@ resource "github_issue_label" "help_wanted" {
   color      = "159818"
 }
 
+resource "github_issue_label" "breaking_changes" {
+  repository = "${github_repository.repository.name}"
+  name       = "Impact: Breaking Changes"
+  color      = "b60205"
+}
+
 resource "github_issue_label" "feature_request" {
   repository = "${github_repository.repository.name}"
   name       = "Type: Feature Request"
