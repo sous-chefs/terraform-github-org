@@ -5,7 +5,7 @@ module "line" {
   homepage_url   = "https://supermarket.chef.io/cookbooks/line"
   cookbook_team  = "${github_team.line.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
-  status_checks  = ["continuous-integration/travis-ci", "ci/circleci: build"]
+  status_checks  = ["ci/circleci: lint"]
 }
 
 resource "github_team" "line" {
