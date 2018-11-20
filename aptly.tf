@@ -16,3 +16,9 @@ resource "github_team_membership" "aptly-maintainer-1" {
   username = "damacus"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "aptly-maintainer-2" {
+  team_id  = "${github_team.aptly.id}"
+  username = "YpNo"
+  role     = "maintainer"
+}

@@ -342,3 +342,18 @@ resource "github_membership" "aried3r" {
   username = "aried3r"
   role     = "member"
 }
+
+resource "github_membership" "PowerSchill" {
+  username = "PowerSchill"
+  role     = "member"
+}
+
+resource "github_membership" "JohnRoesler" {
+  username = "JohnRoesler"
+  role     = "member"
+}
+
+resource "github_membership" "MichaelLopez" {
+  username = "YpNo"
+  role     = "member"
+}
