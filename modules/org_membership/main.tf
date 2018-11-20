@@ -299,7 +299,7 @@ resource "github_membership" "miedward" {
 }
 
 resource "github_membership" "scassiba" {
-  username = "scassiba"
+  username = "sbcas"
   role     = "member"
 }
 
