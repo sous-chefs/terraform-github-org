@@ -3,6 +3,7 @@ module "orbs" {
   name           = "orbs"
   cookbook_team  = "${github_team.orbs.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
+  description    = "The source code for orbs published by Sous-Chefs https://circleci.com/orbs/registry"
 }
 
 resource "github_team" "orbs" {
