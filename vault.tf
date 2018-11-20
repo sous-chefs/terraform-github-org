@@ -16,3 +16,9 @@ resource "github_team_membership" "vault-maintainer-1" {
   username = "johnbellone"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "vault-maintainer-2" {
+  team_id  = "${github_team.vault.id}"
+  username = "powerschill"
+  role     = "maintainer"
+}

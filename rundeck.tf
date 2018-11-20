@@ -23,3 +23,9 @@ resource "github_team_membership" "rundeck-maintainer-2" {
   username = "pcross616"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "rundeck-maintainer-3" {
+  team_id  = "${github_team.rundeck.id}"
+  username = "powerschill"
+  role     = "maintainer"
+}
