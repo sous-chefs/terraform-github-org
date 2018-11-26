@@ -12,7 +12,7 @@ resource "github_team" "confluence_team" {
   privacy     = "closed"
 }
   
-resource "github_team_membership" "vscode-maintainer-1" {
+resource "github_team_membership" "confluence-maintainer-1" {
   team_id  = "${github_team.vscode_team.id}"
   username = "Xorima"
   role     = "maintainer"
