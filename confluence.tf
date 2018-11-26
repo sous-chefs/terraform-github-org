@@ -11,3 +11,15 @@ resource "github_team" "confluence_team" {
   description = "confluence Cookbook Maintainers"
   privacy     = "closed"
 }
+  
+resource "github_team_membership" "vscode-maintainer-1" {
+  team_id  = "${github_team.vscode_team.id}"
+  username = "Xorima"
+  role     = "maintainer"
+}
+
+resource "github_team_membership" "vscode-maintainer-2" {
+  team_id  = "${github_team.vscode_team.id}"
+  username = "damacus"
+  role     = "maintainer"
+}
