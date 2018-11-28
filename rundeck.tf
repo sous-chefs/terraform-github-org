@@ -26,6 +26,6 @@ resource "github_team_membership" "rundeck-maintainer-2" {
 
 resource "github_team_membership" "rundeck-maintainer-3" {
   team_id  = "${github_team.rundeck.id}"
-  username = "powerschill"
+  username = "PowerSchill"
   role     = "maintainer"
 }

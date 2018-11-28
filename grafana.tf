@@ -19,6 +19,6 @@ resource "github_team_membership" "grafana-maintainer-1" {
 
 resource "github_team_membership" "grafana-maintainer-2" {
   team_id  = "${github_team.grafana.id}"
-  username = "xorima"
+  username = "Xorima"
   role     = "maintainer"
 }

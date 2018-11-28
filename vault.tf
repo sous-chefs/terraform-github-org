@@ -19,6 +19,6 @@ resource "github_team_membership" "vault-maintainer-1" {
 
 resource "github_team_membership" "vault-maintainer-2" {
   team_id  = "${github_team.vault.id}"
-  username = "powerschill"
+  username = "PowerSchill"
   role     = "maintainer"
 }
