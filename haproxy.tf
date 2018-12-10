@@ -24,3 +24,9 @@ resource "github_team_membership" "haproxy-maintainer-2" {
   username = "rshade"
   role     = "member"
 }
+
+resource "github_team_membership" "haproxy-maintainer-3" {
+  team_id  = "${github_team.haproxy.id}"
+  username = "JohnRoesler"
+  role     = "member"
+}
