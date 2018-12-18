@@ -1,12 +1,3 @@
-### Cookbook version
-[Version of the cookbook where you are encountering the issue]
-
-### Chef-client version
-[Version of chef-client in your environment]
-
-### Platform Details
-[Operating system distribution and release version. Cloud provider if running in the cloud]
-
 ### Scenario:
 [What you are trying to achieve and you can't?]
 
