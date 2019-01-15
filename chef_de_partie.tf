@@ -71,11 +71,6 @@ resource "github_team_membership" "jtimberman" {
   role     = "member"
 }
 
-resource "github_team_membership" "juliandunn" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "juliandunn"
-  role     = "member"
-}
 
 resource "github_team_membership" "lamont-granquist" {
   team_id  = "${github_team.Chef_de_partie.id}"
