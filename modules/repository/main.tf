@@ -61,11 +61,11 @@ resource "github_branch_protection" "repository_master" {
 resource "github_team_repository" "repository_everyone" {
   team_id    = "${var.chef_de_partie}"
   repository = "${github_repository.repository.name}"
-  permission = "${var.everyone_permission}"
+  permission = "${var.archived ? "pull" : var.everyone_permission}"
 }
 
 resource "github_team_repository" "restricted_access" {
   team_id    = "${var.cookbook_team}"
   repository = "${github_repository.repository.name}"
-  permission = "${var.team_permission}"
+  permission = "${var.archived ? "pull" : var.team_permission}"
 }
