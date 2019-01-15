@@ -20,6 +20,14 @@ resource "github_repository" "repository" {
   # creation from github api side but we also use it to determine if branch
   # protections should be enabled.
   auto_init = "${var.auto_init}"
+
+  # this is a terrible hack that is needed because of
+  # https://github.com/terraform-providers/terraform-provider-github/issues/155
+  # NOTE: that we only do this on the repo and still care about it when looking
+  # at branch protection
+  lifecycle {
+    ignore_changes = ["auto_init"]
+  }
 }
 
 resource "github_branch_protection" "repository_master" {
@@ -34,8 +42,8 @@ resource "github_branch_protection" "repository_master" {
 
   # when a repo is being initialized/created you can run into race conditions by adding an explicit depends we force the repo to be created before it attempts to add branch protection
   depends_on = [
-  "github_repository.repository",
-]
+    "github_repository.repository",
+  ]
 
   required_status_checks {
     strict   = "${var.require_ci_pass}"
