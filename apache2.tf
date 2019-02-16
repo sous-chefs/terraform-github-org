@@ -3,6 +3,7 @@ module "apache2" {
   name           = "apache2"
   cookbook_team  = "${github_team.apache2.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
+  status_checks  = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "apache2" {
