@@ -1,8 +1,9 @@
 module "squid" {
-  source          = "modules/repository"
-  name            = "squid"
-  cookbook_team   = "${github_team.squid.id}"
-  chef_de_partie  = "${github_team.Chef_de_partie.id}"
+  source         = "modules/repository"
+  name           = "squid"
+  cookbook_team  = "${github_team.squid.id}"
+  chef_de_partie = "${github_team.Chef_de_partie.id}"
+  status_checks  = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "squid" {
