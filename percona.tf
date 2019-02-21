@@ -3,6 +3,7 @@ module "percona" {
   name           = "percona"
   cookbook_team  = "${github_team.percona.id}"
   chef_de_partie = "${github_team.Chef_de_partie.id}"
+  status_checks  = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "percona" {
