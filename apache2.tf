@@ -14,6 +14,6 @@ resource "github_team" "apache2" {
 
 resource "github_team_membership" "apache2-maintainer-1" {
   team_id  = "${github_team.apache2.id}"
-  username = "tas50"
+  username = "damacus"
   role     = "maintainer"
 }

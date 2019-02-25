@@ -14,12 +14,6 @@ resource "github_team" "haproxy" {
   privacy     = "closed"
 }
 
-resource "github_team_membership" "haproxy-maintainer-1" {
-  team_id  = "${github_team.haproxy.id}"
-  username = "tas50"
-  role     = "maintainer"
-}
-
 resource "github_team_membership" "haproxy-maintainer-2" {
   team_id  = "${github_team.haproxy.id}"
   username = "rshade"

@@ -13,6 +13,6 @@ resource "github_team" "ruby_rbenv" {
 
 resource "github_team_membership" "ruby_rbenv-maintainer-1" {
   team_id  = "${github_team.ruby_rbenv.id}"
-  username = "tas50"
+  username = "damacus"
   role     = "maintainer"
 }
