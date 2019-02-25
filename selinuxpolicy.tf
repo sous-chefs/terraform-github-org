@@ -1,8 +1,10 @@
 module "selinuxpolicy" {
-  source         = "modules/repository"
-  name           = "selinux_policy"
-  cookbook_team  = "${github_team.selinux_policy.id}"
-  chef_de_partie = "${github_team.Chef_de_partie.id}"
+  source                     = "modules/repository"
+  name                       = "selinux_policy"
+  cookbook_team              = "${github_team.selinux_policy.id}"
+  chef_de_partie             = "${github_team.Chef_de_partie.id}"
+  require_code_owner_reviews = true
+  status_checks              = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "selinux_policy" {
