@@ -1,10 +1,10 @@
-resource "github_membership" "atrull" {
-  username = "atrull"
+resource "github_membership" "axelrtgs" {
+  username = "axelrtgs"
   role     = "member"
 }
 
-resource "github_membership" "axelrtgs" {
-  username = "axelrtgs"
+resource "github_membership" "TD-4242" {
+  username = "TD-4242"
   role     = "member"
 }
 
@@ -15,11 +15,6 @@ resource "github_membership" "BackSlasher" {
 
 resource "github_membership" "brianhays" {
   username = "brianhays"
-  role     = "member"
-}
-
-resource "github_membership" "Dylan_Myers" {
-  username = "Dylan-M"
   role     = "member"
 }
 

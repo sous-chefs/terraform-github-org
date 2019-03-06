@@ -11,12 +11,6 @@ resource "github_team_membership" "atomic-penguin" {
   role     = "member"
 }
 
-resource "github_team_membership" "atrull" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "atrull"
-  role     = "member"
-}
-
 resource "github_team_membership" "axelrtgs" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "axelrtgs"
@@ -71,7 +65,6 @@ resource "github_team_membership" "jtimberman" {
   role     = "member"
 }
 
-
 resource "github_team_membership" "lamont-granquist" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "lamont-granquist"
@@ -87,12 +80,6 @@ resource "github_team_membership" "martinb3" {
 resource "github_team_membership" "martinisoft" {
   team_id  = "${github_team.Chef_de_partie.id}"
   username = "martinisoft"
-  role     = "member"
-}
-
-resource "github_team_membership" "medyagh" {
-  team_id  = "${github_team.Chef_de_partie.id}"
-  username = "medyagh"
   role     = "member"
 }
 
