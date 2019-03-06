@@ -1,4 +1,3 @@
-
 resource "github_membership" "atrull" {
   username = "atrull"
   role     = "member"
@@ -19,12 +18,10 @@ resource "github_membership" "brianhays" {
   role     = "member"
 }
 
-
 resource "github_membership" "Dylan_Myers" {
   username = "Dylan-M"
   role     = "member"
 }
-
 
 resource "github_membership" "Joshua_Timberman" {
   username = "jtimberman"
@@ -51,18 +48,15 @@ resource "github_membership" "Brian_Menges" {
   role     = "member"
 }
 
-
 resource "github_membership" "Grant_Ridder" {
   username = "shortdudey123"
   role     = "member"
 }
 
-
 resource "github_membership" "flaccid" {
   username = "flaccid"
   role     = "member"
 }
-
 
 resource "github_membership" "rshade" {
   username = "rshade"
@@ -99,12 +93,10 @@ resource "github_membership" "Elias_Abacioglu" {
   role     = "member"
 }
 
-
 resource "github_membership" "emachnic" {
   username = "emachnic"
   role     = "member"
 }
-
 
 resource "github_membership" "snkutlu" {
   username = "snkutlu"
@@ -193,5 +185,15 @@ resource "github_membership" "MichaelLopez" {
 
 resource "github_membership" "mthssdrbrg" {
   username = "mthssdrbrg"
+  role     = "member"
+}
+
+resource "github_membership" "xorima" {
+  username = "Xorima"
+  role     = "member"
+}
+
+resource "github_membership" "adriancohea" {
+  username = "AdrianCohea"
   role     = "member"
 }
