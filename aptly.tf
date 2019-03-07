@@ -21,3 +21,9 @@ resource "github_team_membership" "aptly-maintainer-2" {
   username = "YpNo"
   role     = "maintainer"
 }
+
+ resource "github_team_membership" "aptly-maintainer-3" {
+  team_id  = "${github_team.aptly.id}"
+  username = "Raboo"
+  role     = "maintainer"
+}
