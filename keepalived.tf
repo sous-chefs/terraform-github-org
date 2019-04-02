@@ -14,7 +14,7 @@ resource "github_team" "keepalived" {
 resource "github_team_membership" "keepalived-maintainer-1" {
   team_id  = "${github_team.keepalived.id}"
   username = "Xorima"
-  role     = "member"
+  role     = "maintainer"
 }
 
 resource "github_team_membership" "keepalived-maintainer-2" {
