@@ -22,3 +22,9 @@ resource "github_team_membership" "confluence-maintainer-2" {
   username = "damacus"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "confluence-maintainer-3" {
+  team_id  = "${github_team.confluence.id}"
+  username = "sinfomicien"
+  role     = "maintainer"
+}
