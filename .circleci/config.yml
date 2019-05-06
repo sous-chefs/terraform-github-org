@@ -13,7 +13,7 @@ workflows:
         context: Terraform
         filters:
           branches:
-            ignore: [master]
+            only: [master]
 jobs:
   test:
     executor: terraform/terraform
