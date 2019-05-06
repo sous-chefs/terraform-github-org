@@ -28,6 +28,7 @@ jobs:
     executor: terraform/terraform
     steps:
       - checkout
+      - init
       - apply_auto_approve
 
 orbs:
