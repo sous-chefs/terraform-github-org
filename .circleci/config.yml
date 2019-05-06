@@ -8,7 +8,7 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - lint_terraform
+      - terraform/lint_terraform
       - run:
           name: Terraform Plan
           command: |
