@@ -1,43 +1,50 @@
+---
 version: 2.1
-orbs:
-  terraform: sous-chefs/terraform@dev:latest
-
-jobs:
-  plan:
-    docker:
-      - image: hashicorp/terraform
-    steps:
-      - checkout
-      - terraform/lint_terraform
-      - run:
-          name: Terraform Plan
-          command: |
-            terraform init
-            terraform plan
-  apply:
-    docker:
-      - image: hashicorp/terraform
-    steps:
-      - checkout
-      - run:
-          name: Terraform Apply
-          command: |
-            terraform init
-            terraform apply --auto-approve
 
 workflows:
   version: 2
-  build:
+  plan:
     jobs:
-      - plan:
-          context: Terraform
-          filters:
-            branches:
-                ignore:
-                  - master
-      - apply:
-          context: Terraform
-          filters:
-            branches:
-                only:
-                  - master
+      - tf/lint:
+        filters:
+          branches: [ignore: master]
+  # build:
+  #   jobs:
+  #     - plan:
+  #         context: Terraform
+  #         filters:
+  #           branches:
+  #               ignore:
+  #                 - master
+  #     - apply:
+  #         context: Terraform
+  #         filters:
+  #           branches:
+  #               only:
+  #                 - master
+
+orbs:
+  # terraform: sous-chefs/terraform@0.0.1
+  terraform: devops-workflow/terraform@0.0.1
+
+  tf:
+    executors:
+      terraform:
+        docker: [image: hashicorp/terraform]
+    jobs:
+      lint:
+        executor: terraform
+        steps:
+          - checkout
+          - terraform/terraform_fmt
+    # commands:
+    #   lint:
+    #     description: Lint Terraform
+    #     steps:
+    #       - run:
+    #           name: Lint Terraform
+    #           command: |
+    #             if [[ -n "$(terraform fmt -write=false)" ]]; then
+    #               echo "Some terraform files need be formatted, run 'terraform fmt' to fix";
+    #               exit 1;
+    #             fi
