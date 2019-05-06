@@ -5,8 +5,12 @@ workflows:
   version: 2
   plan:
     jobs:
-      - tf/lint:
-        filters:
+      docker: [image: hashicorp/terraform]
+      steps:
+        - checkout
+        - terraform/terraform_fmt
+        - terraform/terraform_validate
+      filters:
           branches: [ignore: master]
   # build:
   #   jobs:
