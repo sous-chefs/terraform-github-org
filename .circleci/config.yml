@@ -1,27 +1,29 @@
 ---
 version: 2.1
 
+workflows:
+  test:
+    jobs:
+     - test:
+        context: Terraform
+        filters:
+          branches:
+            ignore: [master]
 jobs:
   test:
     executor: terraform/terraform
     steps:
-      - checkout
-      - terraform/terraform_fmt
-      - terraform/terraform_validate
-      - init
-      - plan
+    - checkout
+    - terraform/terraform_fmt
+    - terraform/terraform_validate
+    - init
+    - plan
 
   apply:
     executor: terraform/terraform
     steps:
       - checkout
       - apply_auto_approve
-
-workflows:
-  test:
-    jobs: [test]
-    filters:
-        branches: [ignore: master]
 
 orbs:
   terraform: devops-workflow/terraform@0.0.1
@@ -34,6 +36,12 @@ commands:
           command: terraform init -lock=false -upgrade -input=false
   plan:
     description: Plan Terraform
-        steps:
-          - run:
-              command: terraform init -lock=false -upgrade -input=false
+    steps:
+      - run:
+          command: terraform init -lock=false -upgrade -input=false
+
+  apply_auto_approve:
+    description: Apply Terraform
+    steps:
+      - run:
+          command: terraform apply --auto-approve
