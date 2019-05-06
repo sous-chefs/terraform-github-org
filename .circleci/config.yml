@@ -1,10 +1,14 @@
 version: 2
+orbs:
+  terraform: sous-chefs/terraform@dev
+
 jobs:
   plan:
     docker:
       - image: hashicorp/terraform
     steps:
       - checkout
+      - lint_terraform
       - run:
           name: Terraform Plan
           command: |
