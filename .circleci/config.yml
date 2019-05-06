@@ -44,8 +44,7 @@ commands:
     description: Plan Terraform
     steps:
       - run:
-          command: terraform init -lock=false -upgrade -input=false
-
+          command: terraform plan -input=true -parallelism=50
   apply_auto_approve:
     description: Apply Terraform
     steps:
