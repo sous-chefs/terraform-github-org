@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  terraform: sous-chefs/terraform@dev
+  terraform: sous-chefs/terraform@dev:latest
 
 jobs:
   plan:
