@@ -9,6 +9,11 @@ workflows:
         filters:
           branches:
             ignore: [master]
+      - apply:
+        context: Terraform
+        filters:
+          branches:
+            ignore: [master]
 jobs:
   test:
     executor: terraform/terraform
