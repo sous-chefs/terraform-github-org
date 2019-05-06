@@ -4,12 +4,12 @@ version: 2.1
 workflows:
   test:
     jobs:
-     - test:
+    - test:
         context: Terraform
         filters:
           branches:
             ignore: [master]
-      - apply:
+    - apply:
         context: Terraform
         filters:
           branches:
