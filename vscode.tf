@@ -1,6 +1,6 @@
 module "vscode" {
-  source        = "modules/repository"
-  name          = "vscode"
+  source = "modules/repository"
+  name = "vscode"
   cookbook_team = "${github_team.vscode.id}"
   require_code_owner_reviews = true
   status_checks  = ["ci/circleci: delivery"]
