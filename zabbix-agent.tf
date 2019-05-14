@@ -16,3 +16,9 @@ resource "github_team_membership" "zabbix-agent-maintainer-1" {
   username = "TD-4242"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "zabbix-agent-maintainer-2" {
+  team_id  = "${github_team.zabbix-agent.id}"
+  username = "Xorima"
+  role     = "maintainer"
+}
