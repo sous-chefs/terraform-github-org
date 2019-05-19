@@ -2,8 +2,7 @@ module "unifi" {
   source        = "modules/repository"
   name          = "unifi"
   cookbook_team = "${github_team.unifi.id}"
-  status_checks              = ["ci/circleci: delivery"]
-
+  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "unifi" {
