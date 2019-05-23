@@ -16,7 +16,7 @@ workflows:
             only: [master]
 jobs:
   test:
-    executor: "terraform/terraform:0.11.14"
+    executor: terraform
     steps:
     - checkout
     - terraform/terraform_fmt
@@ -25,7 +25,7 @@ jobs:
     - plan
 
   apply:
-    executor: terraform/terraform
+    executor: terraform
     steps:
       - checkout
       - init
@@ -50,3 +50,8 @@ commands:
     steps:
       - run:
           command: terraform apply --auto-approve
+
+executors:
+  terraform:
+    docker:
+      - image: hashicorp/terraform:11.14
