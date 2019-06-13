@@ -29,3 +29,9 @@ resource "github_team_membership" "nagios-maintainer-tas50" {
   username = "tas50"
   role     = "maintainer"
 }
+  
+resource "github_team_membership" "nagios-maintainer-ryantiger658" {
+  team_id  = "${github_team.nagios.id}"
+  username = "ryantiger658"
+  role     = "maintainer"
+}
