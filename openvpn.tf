@@ -2,6 +2,9 @@ module "openvpn" {
   source        = "modules/repository"
   name          = "openvpn"
   cookbook_team = "${github_team.openvpn.id}"
+  enforce_admins             = true
+  require_code_owner_reviews = true
+  status_checks              = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "openvpn" {
