@@ -20,7 +20,7 @@ jobs:
     steps:
     - checkout
     - terraform/terraform_fmt
-    - terraform/terraform_validate
+    - validate
     - init
     - plan
 
@@ -40,6 +40,14 @@ commands:
     steps:
       - run:
           command: terraform init -lock=false -upgrade -input=false
+  # this is a hack as the current orb does not have a working
+  # validate step when used against terraform 0.12.x 
+  # when this is fixed this can be removed/reverted
+  validate:
+    description: Validate Terraform
+    steps:
+      - run:
+          command: terraform validate
   plan:
     description: Plan Terraform
     steps:
