@@ -20,8 +20,8 @@ jobs:
     steps:
     - checkout
     - terraform/terraform_fmt
-    - validate
     - init
+    - validate
     - plan
 
   apply:
