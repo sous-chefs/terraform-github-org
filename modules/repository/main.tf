@@ -19,7 +19,7 @@ resource "github_repository" "repository" {
   # since the branch will not exist yet. It is only relevant during repo
   # creation from github api side but we also use it to determine if branch
   # protections should be enabled.
-  auto_init = "${var.auto_init}"
+  auto_init = var.auto_init
 
   # this is a terrible hack that is needed because of
   # https://github.com/terraform-providers/terraform-provider-github/issues/155
