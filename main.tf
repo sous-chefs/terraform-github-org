@@ -7,10 +7,10 @@ provider "github" {
   organization = var.github_organization
 }
 
-// terraform {
-//   backend "s3" {
-//     bucket = "sous-chefs.terraform-state"
-//     key    = "terraform.tfstate"
-//     region = "eu-west-1"
-//   }
-// }
+terraform {
+  backend "s3" {
+    bucket = "sous-chefs.terraform-state"
+    key    = "terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
