@@ -1,7 +1,7 @@
 module "ruby_rbenv" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "ruby_rbenv"
-  cookbook_team = "${github_team.ruby_rbenv.id}"
+  cookbook_team = github_team.ruby_rbenv.id
 }
 
 resource "github_team" "ruby_rbenv" {
@@ -11,7 +11,8 @@ resource "github_team" "ruby_rbenv" {
 }
 
 resource "github_team_membership" "ruby_rbenv-maintainer-1" {
-  team_id  = "${github_team.ruby_rbenv.id}"
+  team_id  = github_team.ruby_rbenv.id
   username = "damacus"
   role     = "maintainer"
 }
+

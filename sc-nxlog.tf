@@ -1,7 +1,7 @@
 module "sc-nxlog" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "sc-nxlog"
-  cookbook_team = "${github_team.sc-nxlog.id}"
+  cookbook_team = github_team.sc-nxlog.id
 }
 
 resource "github_team" "sc-nxlog" {
@@ -11,7 +11,8 @@ resource "github_team" "sc-nxlog" {
 }
 
 resource "github_team_membership" "sc-nxlog-maintainer-1" {
-  team_id  = "${github_team.sc-nxlog.id}"
+  team_id  = github_team.sc-nxlog.id
   username = "Xorima"
   role     = "maintainer"
 }
+

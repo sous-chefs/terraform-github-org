@@ -1,7 +1,7 @@
 module "dnsmasq" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "dnsmasq"
-  cookbook_team = "${github_team.dnsmasq.id}"
+  cookbook_team = github_team.dnsmasq.id
 }
 
 resource "github_team" "dnsmasq" {
@@ -11,7 +11,8 @@ resource "github_team" "dnsmasq" {
 }
 
 resource "github_team_membership" "dnsmasq-maintainer-1" {
-  team_id  = "${github_team.dnsmasq.id}"
+  team_id  = github_team.dnsmasq.id
   username = "damacus"
   role     = "maintainer"
 }
+

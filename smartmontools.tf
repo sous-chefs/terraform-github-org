@@ -1,7 +1,7 @@
 module "smartmontools" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "smartmontools"
-  cookbook_team = "${github_team.smartmontools.id}"
+  cookbook_team = github_team.smartmontools.id
   status_checks = ["ci/circleci: delivery"]
 }
 
@@ -12,13 +12,14 @@ resource "github_team" "smartmontools" {
 }
 
 resource "github_team_membership" "smartmontools-maintainer-1" {
-  team_id  = "${github_team.smartmontools.id}"
+  team_id  = github_team.smartmontools.id
   username = "tas50"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "smartmontools-maintainer-2" {
-  team_id  = "${github_team.smartmontools.id}"
+  team_id  = github_team.smartmontools.id
   username = "Xorima"
   role     = "maintainer"
 }
+

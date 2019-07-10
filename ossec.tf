@@ -1,7 +1,7 @@
 module "ossec" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "ossec"
-  cookbook_team = "${github_team.ossec.id}"
+  cookbook_team = github_team.ossec.id
 }
 
 resource "github_team" "ossec" {
@@ -11,7 +11,8 @@ resource "github_team" "ossec" {
 }
 
 resource "github_team_membership" "ossec-maintainer-1" {
-  team_id  = "${github_team.ossec.id}"
+  team_id  = github_team.ossec.id
   username = "tas50"
   role     = "maintainer"
 }
+

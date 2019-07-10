@@ -1,7 +1,7 @@
 module "nginx_simplecgi" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "nginx_simplecgi"
-  cookbook_team = "${github_team.nginx_simplecgi.id}"
+  cookbook_team = github_team.nginx_simplecgi.id
 }
 
 resource "github_team" "nginx_simplecgi" {
@@ -11,7 +11,8 @@ resource "github_team" "nginx_simplecgi" {
 }
 
 resource "github_team_membership" "nginx_simplecgi-maintainer-1" {
-  team_id  = "${github_team.nginx_simplecgi.id}"
+  team_id  = github_team.nginx_simplecgi.id
   username = "tas50"
   role     = "maintainer"
 }
+

@@ -1,7 +1,7 @@
 module "dhcp" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "dhcp"
-  cookbook_team = "${github_team.dhcp.id}"
+  cookbook_team = github_team.dhcp.id
   status_checks = ["ci/circleci: delivery"]
 }
 
@@ -12,13 +12,14 @@ resource "github_team" "dhcp" {
 }
 
 resource "github_team_membership" "dhcp-maintainer-1" {
-  team_id  = "${github_team.dhcp.id}"
+  team_id  = github_team.dhcp.id
   username = "shortdudey123"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "dhcp-maintainer-2" {
-  team_id  = "${github_team.dhcp.id}"
+  team_id  = github_team.dhcp.id
   username = "Xorima"
   role     = "maintainer"
 }
+

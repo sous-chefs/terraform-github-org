@@ -1,7 +1,7 @@
 module "filesystem" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "filesystem"
-  cookbook_team = "${github_team.filesystem.id}"
+  cookbook_team = github_team.filesystem.id
 }
 
 resource "github_team" "filesystem" {
@@ -11,7 +11,8 @@ resource "github_team" "filesystem" {
 }
 
 resource "github_team_membership" "filesystem-maintainer-1" {
-  team_id  = "${github_team.filesystem.id}"
+  team_id  = github_team.filesystem.id
   username = "rshade"
   role     = "maintainer"
 }
+

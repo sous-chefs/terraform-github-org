@@ -1,7 +1,7 @@
 module "gpg" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "gpg"
-  cookbook_team = "${github_team.gpg.id}"
+  cookbook_team = github_team.gpg.id
 }
 
 resource "github_team" "gpg" {
@@ -11,7 +11,8 @@ resource "github_team" "gpg" {
 }
 
 resource "github_team_membership" "gpg-maintainer-1" {
-  team_id  = "${github_team.gpg.id}"
+  team_id  = github_team.gpg.id
   username = "damacus"
   role     = "maintainer"
 }
+

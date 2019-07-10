@@ -1,7 +1,7 @@
 module "php" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "php"
-  cookbook_team = "${github_team.php.id}"
+  cookbook_team = github_team.php.id
 }
 
 resource "github_team" "php" {
@@ -11,7 +11,8 @@ resource "github_team" "php" {
 }
 
 resource "github_team_membership" "php-maintainer-1" {
-  team_id  = "${github_team.php.id}"
+  team_id  = github_team.php.id
   username = "damacus"
   role     = "maintainer"
 }
+

@@ -1,7 +1,7 @@
 module "zabbix-agent" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "zabbix-agent"
-  cookbook_team = "${github_team.zabbix-agent.id}"
+  cookbook_team = github_team.zabbix-agent.id
   status_checks = ["ci/circleci: delivery"]
 }
 
@@ -12,13 +12,14 @@ resource "github_team" "zabbix-agent" {
 }
 
 resource "github_team_membership" "zabbix-agent-maintainer-1" {
-  team_id  = "${github_team.zabbix-agent.id}"
+  team_id  = github_team.zabbix-agent.id
   username = "TD-4242"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "zabbix-agent-maintainer-2" {
-  team_id  = "${github_team.zabbix-agent.id}"
+  team_id  = github_team.zabbix-agent.id
   username = "Xorima"
   role     = "maintainer"
 }
+

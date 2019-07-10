@@ -1,7 +1,7 @@
 module "kafka" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "kafka"
-  cookbook_team = "${github_team.kafka.id}"
+  cookbook_team = github_team.kafka.id
   status_checks = ["ci/circleci: delivery"]
 }
 
@@ -12,7 +12,8 @@ resource "github_team" "kafka" {
 }
 
 resource "github_team_membership" "kafka-maintainer-1" {
-  team_id  = "${github_team.kafka.id}"
+  team_id  = github_team.kafka.id
   username = "Xorima"
   role     = "maintainer"
 }
+

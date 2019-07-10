@@ -1,7 +1,7 @@
 module "unifi" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "unifi"
-  cookbook_team = "${github_team.unifi.id}"
+  cookbook_team = github_team.unifi.id
   status_checks = ["ci/circleci: delivery"]
 }
 
@@ -12,13 +12,14 @@ resource "github_team" "unifi" {
 }
 
 resource "github_team_membership" "unifi-maintainer-1" {
-  team_id  = "${github_team.unifi.id}"
+  team_id  = github_team.unifi.id
   username = "tas50"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "unifi-maintainer-2" {
-  team_id  = "${github_team.unifi.id}"
+  team_id  = github_team.unifi.id
   username = "Xorima"
   role     = "maintainer"
 }
+

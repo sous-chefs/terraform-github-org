@@ -1,7 +1,7 @@
 module "varnish" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "varnish"
-  cookbook_team = "${github_team.varnish.id}"
+  cookbook_team = github_team.varnish.id
 }
 
 resource "github_team" "varnish" {
@@ -11,19 +11,20 @@ resource "github_team" "varnish" {
 }
 
 resource "github_team_membership" "varnish-maintainer-1" {
-  team_id  = "${github_team.varnish.id}"
+  team_id  = github_team.varnish.id
   username = "martinb3"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "varnish-maintainer-2" {
-  team_id  = "${github_team.varnish.id}"
+  team_id  = github_team.varnish.id
   username = "rshade"
   role     = "member"
 }
 
 resource "github_team_membership" "varnish-maintainer-3" {
-  team_id  = "${github_team.varnish.id}"
+  team_id  = github_team.varnish.id
   username = "RyanJarv"
   role     = "member"
 }
+

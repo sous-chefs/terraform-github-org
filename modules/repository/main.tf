@@ -55,7 +55,6 @@ resource "github_branch_protection" "repository_master" {
     require_code_owner_reviews = "${var.require_code_owner_reviews}"
   }
 
-  depends_on = ["github_repository.repository"]
 }
 
 resource "github_team_repository" "restricted_access" {

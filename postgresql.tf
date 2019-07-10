@@ -1,7 +1,7 @@
 module "postgresql" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "postgresql"
-  cookbook_team = "${github_team.postgresql.id}"
+  cookbook_team = github_team.postgresql.id
 }
 
 resource "github_team" "postgresql" {
@@ -11,13 +11,14 @@ resource "github_team" "postgresql" {
 }
 
 resource "github_team_membership" "postgresql-maintainer-1" {
-  team_id  = "${github_team.postgresql.id}"
+  team_id  = github_team.postgresql.id
   username = "damacus"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "postgresql-maintainer-2" {
-  team_id  = "${github_team.postgresql.id}"
+  team_id  = github_team.postgresql.id
   username = "teknofire"
   role     = "maintainer"
 }
+
