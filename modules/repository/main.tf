@@ -34,7 +34,7 @@ resource "github_branch_protection" "repository_master" {
   # this is a bit of a hack to allow people to create repositories uninitialized
   # and then add branch protection later. The use cases are mostly around needing
   # to create "forked" private repositories
-  count = 1
+  var.auto_init ? 1 : 0
 
   repository     = "${var.name}"
   branch         = "master"
