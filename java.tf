@@ -22,3 +22,9 @@ resource "github_team_membership" "java-maintainer-2" {
   username = "duncaan"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "java-maintainer-3" {
+  team_id  = "${github_team.java.id}"
+  username = "majormoses"
+  role     = "member"
+}
