@@ -1,7 +1,7 @@
 module "percona" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "percona"
-  cookbook_team = "${github_team.percona.id}"
+  cookbook_team = github_team.percona.id
 
   status_checks = ["ci/circleci: delivery"]
 }
@@ -13,13 +13,14 @@ resource "github_team" "percona" {
 }
 
 resource "github_team_membership" "percona-maintainer-1" {
-  team_id  = "${github_team.percona.id}"
+  team_id  = github_team.percona.id
   username = "damacus"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "percona-maintainer-2" {
-  team_id  = "${github_team.percona.id}"
+  team_id  = github_team.percona.id
   username = "teknofire"
   role     = "maintainer"
 }
+

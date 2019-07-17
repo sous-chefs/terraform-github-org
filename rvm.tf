@@ -1,7 +1,7 @@
 module "rvm" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "rvm"
-  cookbook_team = "${github_team.rvm.id}"
+  cookbook_team = github_team.rvm.id
 }
 
 resource "github_team" "rvm" {
@@ -11,7 +11,8 @@ resource "github_team" "rvm" {
 }
 
 resource "github_team_membership" "rvm-maintainer-1" {
-  team_id  = "${github_team.rvm.id}"
+  team_id  = github_team.rvm.id
   username = "martinisoft"
   role     = "maintainer"
 }
+

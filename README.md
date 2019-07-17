@@ -18,7 +18,7 @@ Example repository with one maintainer.
 
 ```hcl
 module "bsdcpio" {
-  source         = "modules/repository"
+  source         = "./modules/repository"
   name           = "bsdcpio"
   description    = "Development repository for the bsdcpio cookbook"
   cookbook_team  = "${github_team.bsdcpio.id}"

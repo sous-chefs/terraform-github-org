@@ -1,7 +1,7 @@
 module "selinuxpolicy" {
-  source                     = "modules/repository"
+  source                     = "./modules/repository"
   name                       = "selinux_policy"
-  cookbook_team              = "${github_team.selinux_policy.id}"
+  cookbook_team              = github_team.selinux_policy.id
   require_code_owner_reviews = true
   status_checks              = ["ci/circleci: delivery"]
 }
@@ -13,13 +13,14 @@ resource "github_team" "selinux_policy" {
 }
 
 resource "github_team_membership" "selinuxpolicy-member" {
-  team_id  = "${github_team.selinux_policy.id}"
+  team_id  = github_team.selinux_policy.id
   username = "shortdudey123"
   role     = "member"
 }
 
 resource "github_team_membership" "selinuxpolicy-member-2" {
-  team_id  = "${github_team.selinux_policy.id}"
+  team_id  = github_team.selinux_policy.id
   username = "BackSlasher"
   role     = "member"
 }
+

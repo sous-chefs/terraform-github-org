@@ -1,5 +1,5 @@
 # module "chef-compliance" {
-#   source         = "modules/repository"
+#   source         = "./modules/repository"
 #   name           = "chef-compliance"
 #   archived       = true
 #   cookbook_team  = "${github_team.chef-compliance.id}"
@@ -14,4 +14,3 @@
 #   username = "mengesb"
 #   role     = "maintainer"
 # }
-

@@ -1,7 +1,7 @@
 module "haproxy" {
-  source         = "modules/repository"
+  source         = "./modules/repository"
   name           = "haproxy"
-  cookbook_team  = "${github_team.haproxy.id}"
+  cookbook_team  = github_team.haproxy.id
   enforce_admins = true
   status_checks  = ["ci/circleci: delivery"]
 }
@@ -13,13 +13,14 @@ resource "github_team" "haproxy" {
 }
 
 resource "github_team_membership" "haproxy-maintainer-2" {
-  team_id  = "${github_team.haproxy.id}"
+  team_id  = github_team.haproxy.id
   username = "rshade"
   role     = "member"
 }
 
 resource "github_team_membership" "haproxy-maintainer-3" {
-  team_id  = "${github_team.haproxy.id}"
+  team_id  = github_team.haproxy.id
   username = "JohnRoesler"
   role     = "member"
 }
+

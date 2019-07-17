@@ -1,7 +1,7 @@
 module "atom" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "atom"
-  cookbook_team = "${github_team.atom.id}"
+  cookbook_team = github_team.atom.id
 }
 
 resource "github_team" "atom" {
@@ -11,7 +11,8 @@ resource "github_team" "atom" {
 }
 
 resource "github_team_membership" "atom-maintainer-1" {
-  team_id  = "${github_team.atom.id}"
+  team_id  = github_team.atom.id
   username = "damacus"
   role     = "maintainer"
 }
+

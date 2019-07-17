@@ -19,7 +19,7 @@ resource "github_repository" "repository" {
   # since the branch will not exist yet. It is only relevant during repo
   # creation from github api side but we also use it to determine if branch
   # protections should be enabled.
-  auto_init = "${var.auto_init}"
+  auto_init = var.auto_init
 
   # this is a terrible hack that is needed because of
   # https://github.com/terraform-providers/terraform-provider-github/issues/155
@@ -34,7 +34,7 @@ resource "github_branch_protection" "repository_master" {
   # this is a bit of a hack to allow people to create repositories uninitialized
   # and then add branch protection later. The use cases are mostly around needing
   # to create "forked" private repositories
-  count = "${var.auto_init}"
+  count = var.auto_init ? 1 : 0
 
   repository     = "${var.name}"
   branch         = "master"
@@ -47,7 +47,7 @@ resource "github_branch_protection" "repository_master" {
 
   required_status_checks {
     strict   = "${var.require_ci_pass}"
-    contexts = ["${var.status_checks}"]
+    contexts = "${var.status_checks}"
   }
 
   required_pull_request_reviews {
@@ -55,7 +55,6 @@ resource "github_branch_protection" "repository_master" {
     require_code_owner_reviews = "${var.require_code_owner_reviews}"
   }
 
-  depends_on = ["github_repository.repository"]
 }
 
 resource "github_team_repository" "restricted_access" {

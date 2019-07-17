@@ -20,8 +20,8 @@ jobs:
     steps:
     - checkout
     - terraform/terraform_fmt
-    - terraform/terraform_validate
     - init
+    - validate
     - plan
 
   apply:
@@ -40,6 +40,14 @@ commands:
     steps:
       - run:
           command: terraform init -lock=false -upgrade -input=false
+  # this is a hack as the current orb does not have a working
+  # validate step when used against terraform 0.12.x 
+  # when this is fixed this can be removed/reverted
+  validate:
+    description: Validate Terraform
+    steps:
+      - run:
+          command: terraform validate
   plan:
     description: Plan Terraform
     steps:
@@ -54,4 +62,4 @@ commands:
 executors:
   terraform:
     docker:
-      - image: hashicorp/terraform:0.11.14
+      - image: hashicorp/terraform

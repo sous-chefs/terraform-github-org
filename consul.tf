@@ -1,7 +1,7 @@
 module "consul" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "consul"
-  cookbook_team = "${github_team.consul.id}"
+  cookbook_team = github_team.consul.id
   status_checks = ["ci/circleci: delivery"]
 }
 
@@ -12,7 +12,8 @@ resource "github_team" "consul" {
 }
 
 resource "github_team_membership" "consul-maintainer-1" {
-  team_id  = "${github_team.consul.id}"
+  team_id  = github_team.consul.id
   username = "damacus"
   role     = "maintainer"
 }
+

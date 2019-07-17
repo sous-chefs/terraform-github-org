@@ -1,7 +1,7 @@
 module "reprepro" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "reprepro"
-  cookbook_team = "${github_team.reprepro.id}"
+  cookbook_team = github_team.reprepro.id
 }
 
 resource "github_team" "reprepro" {
@@ -11,7 +11,8 @@ resource "github_team" "reprepro" {
 }
 
 resource "github_team_membership" "reprepro-maintainer-1" {
-  team_id  = "${github_team.reprepro.id}"
+  team_id  = github_team.reprepro.id
   username = "tas50"
   role     = "maintainer"
 }
+

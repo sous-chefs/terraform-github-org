@@ -1,7 +1,7 @@
 module "control_groups" {
-  source                     = "modules/repository"
+  source                     = "./modules/repository"
   name                       = "control_groups"
-  cookbook_team              = "${github_team.control_groups.id}"
+  cookbook_team              = github_team.control_groups.id
   require_code_owner_reviews = true
   status_checks              = ["ci/circleci: delivery"]
 }
@@ -13,7 +13,8 @@ resource "github_team" "control_groups" {
 }
 
 resource "github_team_membership" "control_groups-maintainer-1" {
-  team_id  = "${github_team.control_groups.id}"
+  team_id  = github_team.control_groups.id
   username = "damacus"
   role     = "maintainer"
 }
+

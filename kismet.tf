@@ -1,7 +1,7 @@
 module "kismet" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "kismet"
-  cookbook_team = "${github_team.kismet.id}"
+  cookbook_team = github_team.kismet.id
 }
 
 resource "github_team" "kismet" {
@@ -11,7 +11,8 @@ resource "github_team" "kismet" {
 }
 
 resource "github_team_membership" "kismet-maintainer-1" {
-  team_id  = "${github_team.kismet.id}"
+  team_id  = github_team.kismet.id
   username = "tas50"
   role     = "maintainer"
 }
+

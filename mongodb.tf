@@ -1,7 +1,7 @@
 module "mongodb" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "mongodb"
-  cookbook_team = "${github_team.mongodb.id}"
+  cookbook_team = github_team.mongodb.id
 
   homepage_url = "https://supermarket.chef.io/cookbooks/sc-mongodb"
 }
@@ -13,19 +13,20 @@ resource "github_team" "mongodb" {
 }
 
 resource "github_team_membership" "mongodb-maintainer-1" {
-  team_id  = "${github_team.mongodb.id}"
+  team_id  = github_team.mongodb.id
   username = "damacus"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "mongodb-maintainer-2" {
-  team_id  = "${github_team.mongodb.id}"
+  team_id  = github_team.mongodb.id
   username = "shortdudey123"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "mongodb-maintainer-4" {
-  team_id  = "${github_team.mongodb.id}"
+  team_id  = github_team.mongodb.id
   username = "swalberg"
   role     = "maintainer"
 }
+

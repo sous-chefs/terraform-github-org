@@ -1,7 +1,7 @@
 module "graphite" {
-  source                     = "modules/repository"
+  source                     = "./modules/repository"
   name                       = "graphite"
-  cookbook_team              = "${github_team.graphite.id}"
+  cookbook_team              = github_team.graphite.id
   enforce_admins             = true
   require_code_owner_reviews = true
 }
@@ -13,13 +13,14 @@ resource "github_team" "graphite" {
 }
 
 resource "github_team_membership" "graphite-maintainer-1" {
-  team_id  = "${github_team.graphite.id}"
+  team_id  = github_team.graphite.id
   username = "tas50"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "graphite-maintainer-2" {
-  team_id  = "${github_team.graphite.id}"
+  team_id  = github_team.graphite.id
   username = "abilun"
   role     = "maintainer"
 }
+

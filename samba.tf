@@ -1,7 +1,7 @@
 module "samba" {
-  source        = "modules/repository"
+  source        = "./modules/repository"
   name          = "samba"
-  cookbook_team = "${github_team.samba.id}"
+  cookbook_team = github_team.samba.id
 }
 
 resource "github_team" "samba" {
@@ -11,7 +11,8 @@ resource "github_team" "samba" {
 }
 
 resource "github_team_membership" "samba-maintainer" {
-  team_id  = "${github_team.samba.id}"
+  team_id  = github_team.samba.id
   username = "damacus"
   role     = "maintainer"
 }
+
