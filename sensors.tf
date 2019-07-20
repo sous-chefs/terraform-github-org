@@ -2,6 +2,7 @@ module "sensors" {
   source        = "./modules/repository"
   name          = "sensors"
   cookbook_team = github_team.sensors.id
+  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "sensors" {
@@ -15,4 +16,3 @@ resource "github_team_membership" "sensors-maintainer-1" {
   username = "tas50"
   role     = "maintainer"
 }
-
