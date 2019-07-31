@@ -2,6 +2,7 @@ module "ossec" {
   source        = "./modules/repository"
   name          = "ossec"
   cookbook_team = github_team.ossec.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "ossec" {

@@ -2,7 +2,6 @@ module "smartmontools" {
   source        = "./modules/repository"
   name          = "smartmontools"
   cookbook_team = github_team.smartmontools.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "smartmontools" {

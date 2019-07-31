@@ -2,7 +2,6 @@ module "snort" {
   source        = "./modules/repository"
   name          = "snort"
   cookbook_team = github_team.snort.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "snort" {

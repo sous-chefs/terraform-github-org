@@ -3,6 +3,7 @@ module "nrpe" {
   name          = "nrpe"
   description   = "Chef cookbook to install Nagios NRPE client"
   cookbook_team = github_team.nrpe.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "nrpe" {

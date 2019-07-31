@@ -2,7 +2,6 @@ module "unbound" {
   source        = "./modules/repository"
   name          = "unbound"
   cookbook_team = github_team.unbound.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "unbound" {

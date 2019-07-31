@@ -2,7 +2,6 @@ module "nano" {
   source        = "./modules/repository"
   name          = "nano"
   cookbook_team = github_team.nano.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "nano" {

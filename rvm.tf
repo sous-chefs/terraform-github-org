@@ -2,6 +2,7 @@ module "rvm" {
   source        = "./modules/repository"
   name          = "rvm"
   cookbook_team = github_team.rvm.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "rvm" {

@@ -3,7 +3,6 @@ module "control_groups" {
   name                       = "control_groups"
   cookbook_team              = github_team.control_groups.id
   require_code_owner_reviews = true
-  status_checks              = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "control_groups" {

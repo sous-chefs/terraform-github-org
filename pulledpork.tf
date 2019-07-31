@@ -2,6 +2,7 @@ module "pulledpork" {
   source        = "./modules/repository"
   name          = "pulledpork"
   cookbook_team = github_team.pulledpork.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "pulledpork" {

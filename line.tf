@@ -4,7 +4,6 @@ module "line" {
   description   = "Development repository for the line cookbook"
   homepage_url  = "https://supermarket.chef.io/cookbooks/line"
   cookbook_team = github_team.line.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "line" {

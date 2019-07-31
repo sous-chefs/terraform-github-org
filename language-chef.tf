@@ -2,9 +2,9 @@ module "language-chef" {
   source        = "./modules/repository"
   name          = "language-chef"
   cookbook_team = github_team.language-chef.id
-
-  description  = "Development repository for the language-chef plugin for the Atom text editor"
-  homepage_url = "https://atom.io/packages/language-chef"
+  status_checks = ["ci/circleci: lint"]
+  description   = "Development repository for the language-chef plugin for the Atom text editor"
+  homepage_url  = "https://atom.io/packages/language-chef"
 }
 
 resource "github_team" "language-chef" {

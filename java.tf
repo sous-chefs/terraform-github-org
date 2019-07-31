@@ -2,7 +2,6 @@ module "java" {
   source        = "./modules/repository"
   name          = "java"
   cookbook_team = github_team.java.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "java" {
