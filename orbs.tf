@@ -2,7 +2,7 @@ module "orbs" {
   source        = "./modules/repository"
   name          = "orbs"
   cookbook_team = github_team.orbs.id
-
+  status_checks = ["ci/circleci: lint"]
   description = "The source code for orbs published by Sous-Chefs https://circleci.com/orbs/registry"
 }
 
