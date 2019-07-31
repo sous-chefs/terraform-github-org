@@ -1,7 +1,10 @@
 module "atom" {
-  source        = "./modules/repository"
-  name          = "atom"
-  cookbook_team = github_team.atom.id
+  source                     = "./modules/repository"
+  name                       = "atom"
+  cookbook_team              = github_team.atom.id
+  require_code_owner_reviews = true
+  status_checks              = ["ci/circleci: delivery"]
+  description                = "Development repository for the sc_atom cookbook"
 }
 
 resource "github_team" "atom" {
@@ -16,3 +19,8 @@ resource "github_team_membership" "atom-maintainer-1" {
   role     = "maintainer"
 }
 
+resource "github_team_membership" "atom-maintainer-2" {
+  team_id  = github_team.atom.id
+  username = "MarkGibbons"
+  role     = "maintainer"
+}
