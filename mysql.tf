@@ -3,6 +3,7 @@ module "mysql" {
   name          = "mysql"
   description   = "Sous Chefs MySQL Cookbook"
   cookbook_team = github_team.mysql.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "mysql" {

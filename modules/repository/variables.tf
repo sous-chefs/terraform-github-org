@@ -28,7 +28,7 @@ variable "require_ci_pass" {
 
 variable "status_checks" {
   type    = "list"
-  default = ["ci/circleci: lint"]
+  default = ["ci/circleci: delivery"]
 }
 
 variable "has_wiki" {

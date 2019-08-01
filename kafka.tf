@@ -2,7 +2,6 @@ module "kafka" {
   source        = "./modules/repository"
   name          = "kafka"
   cookbook_team = github_team.kafka.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "kafka" {

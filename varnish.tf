@@ -2,6 +2,7 @@ module "varnish" {
   source        = "./modules/repository"
   name          = "varnish"
   cookbook_team = github_team.varnish.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "varnish" {

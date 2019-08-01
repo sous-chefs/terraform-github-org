@@ -2,6 +2,7 @@ module "nginx_simplecgi" {
   source        = "./modules/repository"
   name          = "nginx_simplecgi"
   cookbook_team = github_team.nginx_simplecgi.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "nginx_simplecgi" {

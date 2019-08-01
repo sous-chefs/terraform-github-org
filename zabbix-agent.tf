@@ -2,7 +2,6 @@ module "zabbix-agent" {
   source        = "./modules/repository"
   name          = "zabbix-agent"
   cookbook_team = github_team.zabbix-agent.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "zabbix-agent" {

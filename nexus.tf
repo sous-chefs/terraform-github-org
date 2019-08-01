@@ -3,6 +3,7 @@ module "nexus" {
   name                       = "nexus"
   cookbook_team              = github_team.nexus.id
   require_code_owner_reviews = true
+  status_checks              = ["ci/circleci: lint"]
 }
 
 resource "github_team" "nexus" {

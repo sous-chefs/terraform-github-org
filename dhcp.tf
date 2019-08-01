@@ -2,7 +2,6 @@ module "dhcp" {
   source        = "./modules/repository"
   name          = "dhcp"
   cookbook_team = github_team.dhcp.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "dhcp" {

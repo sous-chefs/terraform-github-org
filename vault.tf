@@ -2,7 +2,6 @@ module "vault" {
   source        = "./modules/repository"
   name          = "vault"
   cookbook_team = github_team.vault.id
-  status_checks = ["ci/circleci: delivery"]
   description   = "Development repository for the hashicorp-vault cookbook"
 }
 

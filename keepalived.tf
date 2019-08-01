@@ -2,7 +2,6 @@ module "keepalived" {
   source        = "./modules/repository"
   name          = "keepalived"
   cookbook_team = github_team.keepalived.id
-  status_checks = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "keepalived" {

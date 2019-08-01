@@ -2,6 +2,7 @@ module "samba" {
   source        = "./modules/repository"
   name          = "samba"
   cookbook_team = github_team.samba.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "samba" {

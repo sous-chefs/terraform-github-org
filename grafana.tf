@@ -3,7 +3,6 @@ module "grafana" {
   name                       = "grafana"
   cookbook_team              = github_team.grafana.id
   require_code_owner_reviews = true
-  status_checks              = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "grafana" {

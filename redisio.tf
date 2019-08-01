@@ -3,7 +3,6 @@ module "redisio" {
   name          = "redisio"
   description   = "Development repository for the redisio cookbook"
   cookbook_team = github_team.redisio.id
-  status_checks = ["ci/circleci: delivery", "ci/circleci: lint-markdown", "ci/circleci: lint-yaml"]
 }
 
 resource "github_team" "redisio" {

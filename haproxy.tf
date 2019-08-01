@@ -3,7 +3,6 @@ module "haproxy" {
   name           = "haproxy"
   cookbook_team  = github_team.haproxy.id
   enforce_admins = true
-  status_checks  = ["ci/circleci: delivery"]
 }
 
 resource "github_team" "haproxy" {

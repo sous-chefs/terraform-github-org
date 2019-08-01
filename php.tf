@@ -2,6 +2,7 @@ module "php" {
   source        = "./modules/repository"
   name          = "php"
   cookbook_team = github_team.php.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "php" {
