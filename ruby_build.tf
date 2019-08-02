@@ -2,7 +2,6 @@ module "ruby_build" {
   source        = "./modules/repository"
   name          = "ruby_build"
   cookbook_team = github_team.ruby_build.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "ruby_build" {
