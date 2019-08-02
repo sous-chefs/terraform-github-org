@@ -2,7 +2,6 @@ module "ruby_rbenv" {
   source        = "./modules/repository"
   name          = "ruby_rbenv"
   cookbook_team = github_team.ruby_rbenv.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "ruby_rbenv" {
