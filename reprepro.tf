@@ -2,7 +2,6 @@ module "reprepro" {
   source        = "./modules/repository"
   name          = "reprepro"
   cookbook_team = github_team.reprepro.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "reprepro" {
