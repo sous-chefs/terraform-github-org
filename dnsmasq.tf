@@ -2,7 +2,6 @@ module "dnsmasq" {
   source        = "./modules/repository"
   name          = "dnsmasq"
   cookbook_team = github_team.dnsmasq.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "dnsmasq" {
