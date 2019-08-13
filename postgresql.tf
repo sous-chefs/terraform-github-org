@@ -2,7 +2,6 @@ module "postgresql" {
   source        = "./modules/repository"
   name          = "postgresql"
   cookbook_team = github_team.postgresql.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "postgresql" {

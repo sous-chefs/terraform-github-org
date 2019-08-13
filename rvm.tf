@@ -16,3 +16,8 @@ resource "github_team_membership" "rvm-maintainer-1" {
   role     = "maintainer"
 }
 
+resource "github_team_membership" "rvm-maintainer-2" {
+  team_id  = github_team.rvm.id
+  username = "damacus"
+  role     = "maintainer"
+}
