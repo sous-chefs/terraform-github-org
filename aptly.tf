@@ -2,7 +2,6 @@ module "aptly" {
   source        = "./modules/repository"
   name          = "aptly"
   cookbook_team = github_team.aptly.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "aptly" {
