@@ -13,16 +13,6 @@ resource "github_membership" "Joseph_Anthony_Pasquale_Holsten" {
   role     = "admin"
 }
 
-resource "github_membership" "Pierce_Moore" {
-  username = "rex"
-  role     = "admin"
-}
-
-resource "github_membership" "Jesse_Nelson" {
-  username = "spheromak"
-  role     = "admin"
-}
-
 resource "github_membership" "kitchen-porter" {
   username = "kitchen-porter"
   role     = "admin"
