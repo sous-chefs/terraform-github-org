@@ -1,8 +1,7 @@
 module "haproxy" {
-  source         = "./modules/repository"
-  name           = "haproxy"
-  cookbook_team  = github_team.haproxy.id
-  enforce_admins = true
+  source        = "./modules/repository"
+  name          = "haproxy"
+  cookbook_team = github_team.haproxy.id
 }
 
 resource "github_team" "haproxy" {

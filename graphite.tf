@@ -1,10 +1,8 @@
 module "graphite" {
-  source                     = "./modules/repository"
-  name                       = "graphite"
-  cookbook_team              = github_team.graphite.id
-  enforce_admins             = true
-  require_code_owner_reviews = true
-  status_checks              = ["ci/circleci: lint"]
+  source        = "./modules/repository"
+  name          = "graphite"
+  cookbook_team = github_team.graphite.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "graphite" {

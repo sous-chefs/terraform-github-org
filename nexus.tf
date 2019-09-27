@@ -1,9 +1,8 @@
 module "nexus" {
-  source                     = "./modules/repository"
-  name                       = "nexus"
-  cookbook_team              = github_team.nexus.id
-  require_code_owner_reviews = true
-  status_checks              = ["ci/circleci: lint"]
+  source        = "./modules/repository"
+  name          = "nexus"
+  cookbook_team = github_team.nexus.id
+  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "nexus" {

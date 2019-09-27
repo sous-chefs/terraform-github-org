@@ -1,9 +1,8 @@
 module "vscode" {
-  source                     = "./modules/repository"
-  name                       = "vscode"
-  cookbook_team              = github_team.vscode.id
-  require_code_owner_reviews = true
-  description                = "Development repository for the sc_vscode cookbook"
+  source        = "./modules/repository"
+  name          = "vscode"
+  cookbook_team = github_team.vscode.id
+  description   = "Development repository for the sc_vscode cookbook"
 }
 
 resource "github_team" "vscode" {

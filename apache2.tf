@@ -1,8 +1,7 @@
 module "apache2" {
-  source                     = "./modules/repository"
-  name                       = "apache2"
-  cookbook_team              = github_team.apache2.id
-  require_code_owner_reviews = true
+  source        = "./modules/repository"
+  name          = "apache2"
+  cookbook_team = github_team.apache2.id
 }
 
 resource "github_team" "apache2" {
