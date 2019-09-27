@@ -8,9 +8,9 @@ workflows:
     jobs:
       - sous-chefs/validate_terraform:
           name: validate terraform
+          context: Terraform
       - sous-chefs/lint_terraform:
           name: lint terraform
-
   test:
     jobs:
     - plan:
@@ -25,7 +25,6 @@ workflows:
             only: [master]
 jobs:
   plan:
-    context: Terraform
     executor: terraform
     steps:
       - checkout
@@ -33,7 +32,6 @@ jobs:
       - plan
 
   apply:
-    context: Terraform
     executor: terraform
     steps:
       - checkout
