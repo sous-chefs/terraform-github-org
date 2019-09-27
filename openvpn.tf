@@ -1,7 +1,7 @@
 module "openvpn" {
-  source         = "./modules/repository"
-  name           = "openvpn"
-  cookbook_team  = github_team.openvpn.id
+  source        = "./modules/repository"
+  name          = "openvpn"
+  cookbook_team = github_team.openvpn.id
 }
 
 resource "github_team" "openvpn" {

@@ -1,7 +1,7 @@
 module "graphite" {
-  source         = "./modules/repository"
-  name           = "graphite"
-  cookbook_team  = github_team.graphite.id
+  source        = "./modules/repository"
+  name          = "graphite"
+  cookbook_team = github_team.graphite.id
   status_checks = ["ci/circleci: lint"]
 }
 

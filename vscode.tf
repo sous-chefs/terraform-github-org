@@ -2,7 +2,7 @@ module "vscode" {
   source        = "./modules/repository"
   name          = "vscode"
   cookbook_team = github_team.vscode.id
-  description = "Development repository for the sc_vscode cookbook"
+  description   = "Development repository for the sc_vscode cookbook"
 }
 
 resource "github_team" "vscode" {

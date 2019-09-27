@@ -1,8 +1,8 @@
 module "rundeck" {
-  source         = "./modules/repository"
-  name           = "rundeck"
-  description    = "Development repository for the Rundeck cookbook"
-  cookbook_team  = github_team.rundeck.id
+  source        = "./modules/repository"
+  name          = "rundeck"
+  description   = "Development repository for the Rundeck cookbook"
+  cookbook_team = github_team.rundeck.id
 }
 
 resource "github_team" "rundeck" {
