@@ -25,6 +25,7 @@ workflows:
             only: [master]
 jobs:
   plan:
+    context: Terraform
     executor: terraform
     steps:
       - checkout
@@ -32,6 +33,7 @@ jobs:
       - plan
 
   apply:
+    context: Terraform
     executor: terraform
     steps:
       - checkout
