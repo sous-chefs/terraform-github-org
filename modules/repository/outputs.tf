@@ -1,5 +1,5 @@
 output "full_name" {
-  value = github_repository.repository.fullname
+  value = github_repository.repository.full_name
 }
 
 output "git_clone_url" {
