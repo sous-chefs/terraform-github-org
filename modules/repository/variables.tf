@@ -6,7 +6,7 @@ variable "description" {
 
 locals {
   default_description = "Development repository for the ${var.name} cookbook"
-  description         = "${var.description == "" ? local.default_description : var.description }"
+  description         = var.description == "" ? local.default_description : var.description
 }
 
 variable "cookbook_team" {
@@ -49,7 +49,7 @@ variable "everyone_permission" {
 
 locals {
   default_homepage_url = "https://supermarket.chef.io/cookbooks/${var.name}"
-  homepage_url         = "${var.homepage_url == "" ? local.default_homepage_url : var.homepage_url}"
+  homepage_url         = var.homepage_url == "" ? local.default_homepage_url : var.homepage_url
 }
 
 # Pull Request Reviews
@@ -67,7 +67,7 @@ variable "archived" {
 
 locals {
   default_topics = ["chef", "chef-cookbook", "chef-resource", "${replace(var.name, "_", "-")}"]
-  topics         = "${concat(local.default_topics, var.additional_topics)}"
+  topics         = concat(local.default_topics, var.additional_topics)
 }
 
 variable "additional_topics" {
