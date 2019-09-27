@@ -1,10 +1,19 @@
 ---
 version: 2.1
+orbs:
+  sous-chefs: sous-chefs/kitchen@2
 
 workflows:
+  lint:
+    jobs:
+      - sous-chefs/validate_terraform:
+          name: validate terraform
+      - sous-chefs/lint_terraform:
+          name: lint terraform
+
   test:
     jobs:
-    - test:
+    - plan:
         context: Terraform
         filters:
           branches:
@@ -15,14 +24,12 @@ workflows:
           branches:
             only: [master]
 jobs:
-  test:
+  plan:
     executor: terraform
     steps:
-    - checkout
-    - terraform/terraform_fmt
-    - init
-    - validate
-    - plan
+      - checkout
+      - init
+      - plan
 
   apply:
     executor: terraform
@@ -31,23 +38,12 @@ jobs:
       - init
       - apply_auto_approve
 
-orbs:
-  terraform: devops-workflow/terraform@0.0.1
-
 commands:
   init:
     description: Initialise Terraform
     steps:
       - run:
           command: terraform init -lock=false -upgrade -input=false
-  # this is a hack as the current orb does not have a working
-  # validate step when used against terraform 0.12.x 
-  # when this is fixed this can be removed/reverted
-  validate:
-    description: Validate Terraform
-    steps:
-      - run:
-          command: terraform validate
   plan:
     description: Plan Terraform
     steps:
