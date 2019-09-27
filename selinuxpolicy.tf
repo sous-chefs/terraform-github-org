@@ -1,8 +1,7 @@
 module "selinuxpolicy" {
-  source                     = "./modules/repository"
-  name                       = "selinux_policy"
-  cookbook_team              = github_team.selinux_policy.id
-  require_code_owner_reviews = true
+  source        = "./modules/repository"
+  name          = "selinux_policy"
+  cookbook_team = github_team.selinux_policy.id
 }
 
 resource "github_team" "selinux_policy" {

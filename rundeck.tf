@@ -1,10 +1,8 @@
 module "rundeck" {
-  source                     = "./modules/repository"
-  name                       = "rundeck"
-  description                = "Development repository for the Rundeck cookbook"
-  cookbook_team              = github_team.rundeck.id
-  enforce_admins             = true
-  require_code_owner_reviews = true
+  source         = "./modules/repository"
+  name           = "rundeck"
+  description    = "Development repository for the Rundeck cookbook"
+  cookbook_team  = github_team.rundeck.id
 }
 
 resource "github_team" "rundeck" {

@@ -1,8 +1,7 @@
 module "grafana" {
-  source                     = "./modules/repository"
-  name                       = "grafana"
-  cookbook_team              = github_team.grafana.id
-  require_code_owner_reviews = true
+  source        = "./modules/repository"
+  name          = "grafana"
+  cookbook_team = github_team.grafana.id
 }
 
 resource "github_team" "grafana" {

@@ -1,8 +1,7 @@
 module "control_groups" {
-  source                     = "./modules/repository"
-  name                       = "control_groups"
-  cookbook_team              = github_team.control_groups.id
-  require_code_owner_reviews = true
+  source        = "./modules/repository"
+  name          = "control_groups"
+  cookbook_team = github_team.control_groups.id
 }
 
 resource "github_team" "control_groups" {
