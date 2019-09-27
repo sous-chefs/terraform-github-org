@@ -1,10 +1,11 @@
 # terraform-github-org
+
 [![Backers on Open Collective](https://opencollective.com/sous-chefs/backers/badge.svg)](#backers)
  [![Sponsors on Open Collective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 
 For managing the Sous Chefs Github Organisation
 
-# Usage
+## Usage
 
 ## Becoming A Member
 
