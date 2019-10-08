@@ -10,9 +10,21 @@ resource "github_team_membership" "damacus-board" {
   role     = "maintainer"
 }
 
+resource "github_team_membership" "johnroesler-board" {
+  team_id  = github_team.board.id
+  username = "JohnRoesler"
+  role     = "maintainer"
+}
+
 resource "github_team_membership" "tas50-board" {
   team_id  = github_team.board.id
   username = "tas50"
+  role     = "maintainer"
+}
+
+resource "github_team_membership" "xorima-board" {
+  team_id  = github_team.board.id
+  username = "Xorima"
   role     = "maintainer"
 }
 
