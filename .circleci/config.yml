@@ -6,8 +6,5 @@ orbs:
 workflows:
   lint:
     jobs:
-      - sous-chefs/validate_terraform:
-          name: validate terraform
-          context: Terraform
       - sous-chefs/lint_terraform:
           name: lint terraform
