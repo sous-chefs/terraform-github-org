@@ -168,18 +168,8 @@ resource "github_membership" "PowerSchill" {
   role     = "member"
 }
 
-resource "github_membership" "JohnRoesler" {
-  username = "JohnRoesler"
-  role     = "member"
-}
-
 resource "github_membership" "mthssdrbrg" {
   username = "mthssdrbrg"
-  role     = "member"
-}
-
-resource "github_membership" "xorima" {
-  username = "Xorima"
   role     = "member"
 }
 

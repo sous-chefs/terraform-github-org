@@ -1,3 +1,13 @@
+resource "github_membership" "JohnRoesler" {
+  username = "JohnRoesler"
+  role     = "admin"
+}
+
+resource "github_membership" "xorima" {
+  username = "Xorima"
+  role     = "admin"
+}
+
 resource "github_membership" "Dan_Webb" {
   username = "damacus"
   role     = "admin"
