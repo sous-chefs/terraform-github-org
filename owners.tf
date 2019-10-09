@@ -1,9 +1,9 @@
-resource "github_membership" "John_Roesler" {
+resource "github_membership" "JohnRoesler" {
   username = "JohnRoesler"
   role     = "admin"
 }
 
-resource "github_membership" "Jason_Field" {
+resource "github_membership" "xorima" {
   username = "Xorima"
   role     = "admin"
 }
