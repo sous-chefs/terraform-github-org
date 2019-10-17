@@ -2,8 +2,6 @@ module "mariadb" {
   source          = "./modules/repository"
   name            = "mariadb"
   cookbook_team   = github_team.mariadb.id
-  team_permission = "admin"
-  status_checks   = ["ci/circleci: lint"]
 }
 
 resource "github_team" "mariadb" {
