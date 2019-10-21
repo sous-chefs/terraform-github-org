@@ -1,7 +1,7 @@
 module "mariadb" {
-  source          = "./modules/repository"
-  name            = "mariadb"
-  cookbook_team   = github_team.mariadb.id
+  source        = "./modules/repository"
+  name          = "mariadb"
+  cookbook_team = github_team.mariadb.id
 }
 
 resource "github_team" "mariadb" {
