@@ -3,7 +3,6 @@ module "confluence" {
   name          = "confluence"
   description   = "Sous Chefs confluence Cookbook"
   cookbook_team = github_team.confluence.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "confluence" {
