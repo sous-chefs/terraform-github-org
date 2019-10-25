@@ -2,7 +2,6 @@ module "bsdcpio" {
   source        = "./modules/repository"
   name          = "bsdcpio"
   cookbook_team = github_team.bsdcpio.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "bsdcpio" {
