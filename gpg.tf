@@ -2,7 +2,6 @@ module "gpg" {
   source        = "./modules/repository"
   name          = "gpg"
   cookbook_team = github_team.gpg.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "gpg" {
