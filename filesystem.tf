@@ -2,7 +2,6 @@ module "filesystem" {
   source        = "./modules/repository"
   name          = "filesystem"
   cookbook_team = github_team.filesystem.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "filesystem" {
