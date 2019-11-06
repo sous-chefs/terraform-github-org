@@ -2,7 +2,6 @@ module "npm_lazy" {
   source        = "./modules/repository"
   name          = "npm_lazy"
   cookbook_team = github_team.npm_lazy.id
-  status_checks = ["ci/circleci: lint"]
 }
 
 resource "github_team" "npm_lazy" {
