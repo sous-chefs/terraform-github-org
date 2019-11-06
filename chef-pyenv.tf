@@ -1,4 +1,4 @@
-module "ruby_rbenv" {
+module "chef_pyenv" {
   source        = "./modules/repository"
   name          = "chef-pyenv"
   cookbook_team = github_team.chef-pyenv.id
