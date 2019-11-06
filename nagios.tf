@@ -2,7 +2,6 @@ module "nagios" {
   source        = "./modules/repository"
   name          = "nagios"
   cookbook_team = github_team.nagios.id
-  status_checks = ["ci/circleci: lint"]
   has_wiki      = true
 }
 

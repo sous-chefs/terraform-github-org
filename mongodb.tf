@@ -2,7 +2,6 @@ module "mongodb" {
   source        = "./modules/repository"
   name          = "mongodb"
   cookbook_team = github_team.mongodb.id
-  status_checks = ["ci/circleci: lint"]
   homepage_url  = "https://supermarket.chef.io/cookbooks/sc-mongodb"
 }
 
