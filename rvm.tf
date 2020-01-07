@@ -10,12 +10,6 @@ resource "github_team" "rvm" {
   privacy     = "closed"
 }
 
-resource "github_team_membership" "rvm-maintainer-1" {
-  team_id  = github_team.rvm.id
-  username = "martinisoft"
-  role     = "maintainer"
-}
-
 resource "github_team_membership" "rvm-maintainer-2" {
   team_id  = github_team.rvm.id
   username = "damacus"
