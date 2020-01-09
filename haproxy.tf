@@ -2,6 +2,7 @@ module "haproxy" {
   source        = "./modules/repository"
   name          = "haproxy"
   cookbook_team = github_team.haproxy.id
+  status_checks = ["final", "danger/danger"]
 }
 
 resource "github_team" "haproxy" {
