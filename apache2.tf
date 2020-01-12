@@ -2,7 +2,6 @@ module "apache2" {
   source        = "./modules/repository"
   name          = "apache2"
   cookbook_team = github_team.apache2.id
-  status_checks = ["final", "danger/danger"]
 }
 
 resource "github_team" "apache2" {
