@@ -1,6 +1,6 @@
 name: terraform-lint
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   terraform-lint:
