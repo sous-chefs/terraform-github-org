@@ -28,7 +28,7 @@ variable "require_ci_pass" {
 
 variable "status_checks" {
   type    = "list"
-  default = ["final", "danger/danger"]
+  default = ["final"]
 }
 
 variable "has_wiki" {
