@@ -232,8 +232,3 @@ resource "github_membership" "ramereth" {
   username = "ramereth"
   role     = "member"
 }
-
-resource "github_membership" "emachnic" {
-  username = "emachnic"
-  role     = "member"
-}
