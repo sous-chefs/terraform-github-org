@@ -66,7 +66,7 @@ variable "archived" {
 }
 
 locals {
-  default_topics = ["chef", "chef-cookbook", "chef-resource", "${replace(var.name, "_", "-")}"]
+  default_topics = ["chef", "chef-cookbook", "chef-resource", "${replace(var.name, "_", "-")}", "terraform-managed"]
   topics         = concat(local.default_topics, var.additional_topics)
 }
 
