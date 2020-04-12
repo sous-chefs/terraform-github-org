@@ -4,6 +4,7 @@ module "orbs" {
   cookbook_team = github_team.orbs.id
   status_checks = ["ci/circleci: orb-lint"]
   description   = "The source code for orbs published by Sous-Chefs https://circleci.com/orbs/registry"
+  additional_topics        = ["circleci", "orb"]
 }
 
 resource "github_team" "orbs" {

@@ -66,13 +66,13 @@ variable "archived" {
 }
 
 locals {
-  default_topics = ["chef", "chef-cookbook", "chef-resource", "${replace(var.name, "_", "-")}", "terraform-managed"]
+  default_topics = ["chef", "${replace(var.name, "_", "-")}", "terraform-managed"]
   topics         = concat(local.default_topics, var.additional_topics)
 }
 
 variable "additional_topics" {
   type    = "list"
-  default = []
+  default = ["chef-cookbook", "chef-resource"]
 }
 
 variable "auto_init" {

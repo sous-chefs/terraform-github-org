@@ -4,6 +4,7 @@ module "orb-terraform" {
   description   = "Development repository for the orb-terraform cookbook"
   status_checks = ["ci/circleci: orb-lint"]
   cookbook_team = github_team.orb-terraform.id
+  additional_topics        = ["circleci", "orb", "terraform"]
 }
 
 resource "github_team" "orb-terraform" {
