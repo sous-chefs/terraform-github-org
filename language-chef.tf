@@ -1,9 +1,10 @@
 module "language-chef" {
-  source        = "./modules/repository"
-  name          = "language-chef"
-  cookbook_team = github_team.language-chef.id
-  description   = "Development repository for the language-chef plugin for the Atom text editor"
-  homepage_url  = "https://atom.io/packages/language-chef"
+  source            = "./modules/repository"
+  name              = "language-chef"
+  cookbook_team     = github_team.language-chef.id
+  description       = "Development repository for the language-chef plugin for the Atom text editor"
+  homepage_url      = "https://atom.io/packages/language-chef"
+  additional_topics = ["ide", "atom"]
 }
 
 resource "github_team" "language-chef" {
