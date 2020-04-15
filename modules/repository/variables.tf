@@ -27,7 +27,7 @@ variable "require_ci_pass" {
 }
 
 variable "status_checks" {
-  type    = "list"
+  type    = list(string)
   default = ["final"]
 }
 
@@ -71,7 +71,7 @@ locals {
 }
 
 variable "additional_topics" {
-  type    = "list"
+  type    = list(string)
   default = ["chef-cookbook", "chef-resource"]
 }
 
