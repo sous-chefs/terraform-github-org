@@ -49,19 +49,28 @@ All terraform resource names must be unique. The easiest way to do this is
 - increment the number in the name e.g. `bsdcpio-maintainer-`1 --> `bsdcpio-maintainer-2`
 - change their name to yours.
 
+## Importing a repository
+
+Note: **Board Members only**
+Create the terraform file for the repository
+import the state file using:
+
+```bash
+terraform import module.memcached.github_repository.repository memcached
+```
+
+Then get the pr merged in, not merging in the PR will result in terraform deleting the repo on next run
 
 ## Contributors
 
 This project exists thanks to all the people who contribute.
 <img src="https://opencollective.com/sous-chefs/contributors.svg?width=890&button=false" /></a>
 
-
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/sous-chefs#backer)]
 
 <a href="https://opencollective.com/sous-chefs#backers" target="_blank"><img src="https://opencollective.com/sous-chefs/backers.svg?width=890"></a>
-
 
 ## Sponsors
 
@@ -77,5 +86,3 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/sous-chefs/sponsor/7/website" target="_blank"><img src="https://opencollective.com/sous-chefs/sponsor/7/avatar.svg"></a>
 <a href="https://opencollective.com/sous-chefs/sponsor/8/website" target="_blank"><img src="https://opencollective.com/sous-chefs/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/sous-chefs/sponsor/9/website" target="_blank"><img src="https://opencollective.com/sous-chefs/sponsor/9/avatar.svg"></a>
-
-
