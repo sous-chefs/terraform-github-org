@@ -26,7 +26,7 @@ resource "github_repository" "repository" {
   # NOTE: that we only do this on the repo and still care about it when looking
   # at branch protection
   lifecycle {
-    ignore_changes = ["auto_init"]
+    ignore_changes = [auto_init]
   }
 }
 
@@ -42,7 +42,7 @@ resource "github_branch_protection" "repository_master" {
 
   # when a repo is being initialized/created you can run into race conditions by adding an explicit depends we force the repo to be created before it attempts to add branch protection
   depends_on = [
-    "github_repository.repository",
+    github_repository.repository,
   ]
 
   required_status_checks {

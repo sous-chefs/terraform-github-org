@@ -23,7 +23,7 @@ resource "github_team_membership" "java-maintainer-2" {
 }
 
 resource "github_team_membership" "java-maintainer-3" {
-  team_id  = "${github_team.java.id}"
+  team_id  = github_team.java.id
   username = "majormoses"
   role     = "member"
 }
