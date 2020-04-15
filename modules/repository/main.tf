@@ -3,17 +3,17 @@ resource "github_repository" "repository" {
   description  = local.description
   homepage_url = local.homepage_url
 
-  private                 = false
-  has_issues              = true
-  has_wiki                = var.has_wiki
-  has_projects            = var.has_projects
-  allow_merge_commit      = true
-  allow_squash_merge      = true
-  allow_rebase_merge      = true
-  delete_branch_on_merge  = true
-  has_downloads           = false
-  archived                = var.archived
-  topics                  = local.topics
+  private                = false
+  has_issues             = true
+  has_wiki               = var.has_wiki
+  has_projects           = var.has_projects
+  allow_merge_commit     = true
+  allow_squash_merge     = true
+  allow_rebase_merge     = true
+  delete_branch_on_merge = true
+  has_downloads          = false
+  archived               = var.archived
+  topics                 = local.topics
 
   # this automatically creates a commit and pushes to master and is needed
   # because your can't add branch protection for an uninitialized repo
