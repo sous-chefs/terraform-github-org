@@ -10,12 +10,6 @@ resource "github_team" "grafana" {
   privacy     = "closed"
 }
 
-resource "github_team_membership" "grafana-maintainer-1" {
-  team_id  = github_team.grafana.id
-  username = "abilun"
-  role     = "maintainer"
-}
-
 resource "github_team_membership" "grafana-maintainer-2" {
   team_id  = github_team.grafana.id
   username = "Xorima"
