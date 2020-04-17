@@ -22,3 +22,8 @@ resource "github_team_membership" "dhcp-maintainer-2" {
   role     = "maintainer"
 }
 
+resource "github_team_membership" "dhcp-maintainer-3" {
+  team_id  = github_team.dhcp.id
+  username = "bmhughes"
+  role     = "maintainer"
+}
