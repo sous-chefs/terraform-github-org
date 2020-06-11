@@ -19,6 +19,6 @@ resource "github_team_membership" "squid-maintainer-1" {
 resource "github_team_membership" "squid-maintainer-2" {
   team_id  = github_team.squid.id
   username = "Xorima"
-  role     = "member"
+  role     = "maintainer"
 }
 
