@@ -19,5 +19,5 @@ resource "github_team_membership" "golang-maintainer-1" {
 resource "github_team_membership" "golang-maintainer-2" {
   team_id  = github_team.golang.id
   username = "JohnRoesler"
-  role     = "member"
+  role     = "maintainer"
 }
