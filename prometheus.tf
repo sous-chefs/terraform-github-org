@@ -19,5 +19,5 @@ resource "github_team_membership" "prometheus-maintainer-1" {
 resource "github_team_membership" "prometheus-maintainer-2" {
   team_id  = github_team.prometheus.id
   username = "ramereth"
-  role     = "member"
+  role     = "maintainer"
 }

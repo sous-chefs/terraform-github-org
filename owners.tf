@@ -1,5 +1,5 @@
-resource "github_membership" "JohnRoesler" {
-  username = "JohnRoesler"
+resource "github_membership" "Lance_Albertson" {
+  username = "ramereth"
   role     = "admin"
 }
 

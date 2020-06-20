@@ -10,9 +10,9 @@ resource "github_team_membership" "damacus-board" {
   role     = "maintainer"
 }
 
-resource "github_team_membership" "johnroesler-board" {
+resource "github_team_membership" "ramereth-board" {
   team_id  = github_team.board.id
-  username = "JohnRoesler"
+  username = "ramereth"
   role     = "maintainer"
 }
 
