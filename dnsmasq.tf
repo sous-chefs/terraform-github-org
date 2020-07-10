@@ -16,7 +16,7 @@ resource "github_team_membership" "dnsmasq-maintainer-1" {
   role     = "maintainer"
 }
 
-resource "github_team_membership" "dnsmasq-maintainer-1" {
+resource "github_team_membership" "dnsmasq-maintainer-2" {
   team_id  = github_team.dnsmasq.id
   username = "MarkGibbons"
   role     = "maintainer"
