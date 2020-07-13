@@ -16,7 +16,7 @@ resource "github_team_membership" "atom-maintainer-1" {
   role     = "maintainer"
 }
 
-resource "github_team_membership" "atom-maintainer-2' {
+resource "github_team_membership" "atom-maintainer-2" {
   team_id  = github_team.atom.id
   username = "MarkGibbons"
   role     = "maintainer"
