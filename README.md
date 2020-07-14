@@ -59,7 +59,7 @@ import the state file using:
 terraform import module.memcached.github_repository.repository memcached
 ```
 
-Then get the pr merged in, not merging in the PR will result in terraform deleting the repo on next run
+Then get the pull request merged in, not merging in the PR will result in terraform deleting the repo on next run
 
 ## Contributors
 

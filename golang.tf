@@ -21,3 +21,9 @@ resource "github_team_membership" "golang-maintainer-2" {
   username = "JohnRoesler"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "golang-maintainer-3" {
+  team_id  = github_team.golang.id
+  username = "MarkGibbons"
+  role     = "maintainer"
+}
