@@ -12,12 +12,12 @@ resource "github_team" "grafana" {
 
 resource "github_team_membership" "grafana-maintainer-1" {
   team_id  = github_team.grafana.id
-  username = "Xorima"
+  username = "axelrtgs"
   role     = "maintainer"
 }
 
 resource "github_team_membership" "grafana-maintainer-2" {
   team_id  = github_team.grafana.id
-  username = "axelrtgs"
+  username = "Xorima"
   role     = "maintainer"
 }
