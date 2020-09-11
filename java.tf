@@ -18,12 +18,6 @@ resource "github_team_membership" "java-maintainer-1" {
 
 resource "github_team_membership" "java-maintainer-2" {
   team_id  = github_team.java.id
-  username = "duncaan"
-  role     = "maintainer"
-}
-
-resource "github_team_membership" "java-maintainer-3" {
-  team_id  = github_team.java.id
   username = "majormoses"
   role     = "member"
 }
