@@ -3,7 +3,7 @@ resource "github_repository" "repository" {
   description  = local.description
   homepage_url = local.homepage_url
 
-  private                = false
+  visibility             = "public"
   has_issues             = true
   has_wiki               = var.has_wiki
   has_projects           = var.has_projects

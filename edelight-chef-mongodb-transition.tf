@@ -2,7 +2,7 @@ resource "github_repository" "edelight-chef-mongodb-transition" {
   name        = "edelight-chef-mongodb-transition"
   description = "MongoDB Chef cookbook"
 
-  private            = false
+  visibility         = "public"
   has_issues         = false
   has_wiki           = false
   has_projects       = false
