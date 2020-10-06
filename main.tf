@@ -5,7 +5,7 @@ module "membership" {
 provider "github" {
   token        = var.github_token
   organization = "sous-chefs"
-   version = "~> 3.0"
+  version      = "~> 3.0"
 }
 
 variable "github_token" {}
