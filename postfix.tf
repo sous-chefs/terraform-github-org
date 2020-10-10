@@ -15,3 +15,9 @@ resource "github_team_membership" "postfix-maintainer-1" {
   username = "tas50"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "postfix-maintainer-2" {
+  team_id  = github_team.postfix.id
+  username = "bmhughes"
+  role     = "maintainer"
+}
