@@ -92,3 +92,9 @@ variable "auto_init" {
   this to true which should enable branch protections.
 DESCRIPTION
 }
+
+variable "label_validator_config" {
+  default = {
+    enabled = false
+  }
+}
