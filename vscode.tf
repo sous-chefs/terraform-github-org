@@ -1,8 +1,9 @@
 module "vscode" {
-  source        = "./modules/repository"
-  name          = "vscode"
-  cookbook_team = github_team.vscode.id
-  description   = "Development repository for the sc_vscode cookbook"
+  source                 = "./modules/repository"
+  name                   = "vscode"
+  cookbook_team          = github_team.vscode.id
+  description            = "Development repository for the sc_vscode cookbook"
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "vscode" {
