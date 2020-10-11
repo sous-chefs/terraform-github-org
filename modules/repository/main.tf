@@ -66,13 +66,13 @@ resource "github_team_repository" "restricted_access" {
 
 resource "github_repository_webhook" "label_validator" {
   repository = github_repository.repository.name
-  count      = var.label_valiator_config.enabled ? 1 : 0
+  count      = var.label_validator_config.enabled ? 1 : 0
 
   configuration {
-    url          = var.label_valiator_config.url
+    url          = var.label_validator_config.url
     content_type = "form"
     insecure_ssl = false
-    secret       = var.label_valiator_config.secret
+    secret       = var.label_validator_config.secret
   }
 
   active = true

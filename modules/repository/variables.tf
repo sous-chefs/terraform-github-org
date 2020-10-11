@@ -93,7 +93,7 @@ variable "auto_init" {
 DESCRIPTION
 }
 
-variable "label_valiator_config" {
+variable "label_validator_config" {
   default = {
     enabled = false
   }
