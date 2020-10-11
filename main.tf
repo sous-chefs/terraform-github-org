@@ -19,3 +19,14 @@ terraform {
     }
   }
 }
+
+variable "label_validator_url" {}
+variable "webhook_secret_key" {}
+
+locals {
+  label_validator_config = {
+    url        = var.label_validator_url
+    secret_key = var.webhook_secret_key
+    enabled    = true
+  }
+}

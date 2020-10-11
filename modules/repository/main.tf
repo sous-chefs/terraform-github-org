@@ -63,3 +63,19 @@ resource "github_team_repository" "restricted_access" {
   repository = github_repository.repository.name
   permission = var.archived ? "pull" : var.team_permission
 }
+
+resource "github_repository_webhook" "label_validator" {
+  repository = github_repository.repository.name
+  count      = var.label_valiator_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.label_valiator_config.url
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.label_valiator_config.secret
+  }
+
+  active = true
+
+  events = ["pull_request"]
+}
