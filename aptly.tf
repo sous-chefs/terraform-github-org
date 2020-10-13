@@ -1,7 +1,8 @@
 module "aptly" {
-  source        = "./modules/repository"
-  name          = "aptly"
-  cookbook_team = github_team.aptly.id
+  source                 = "./modules/repository"
+  name                   = "aptly"
+  cookbook_team          = github_team.aptly.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "aptly" {

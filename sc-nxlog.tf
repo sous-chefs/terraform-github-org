@@ -1,7 +1,8 @@
 module "sc-nxlog" {
-  source        = "./modules/repository"
-  name          = "sc-nxlog"
-  cookbook_team = github_team.sc-nxlog.id
+  source                 = "./modules/repository"
+  name                   = "sc-nxlog"
+  cookbook_team          = github_team.sc-nxlog.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "sc-nxlog" {

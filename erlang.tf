@@ -1,7 +1,8 @@
 module "erlang" {
-  source        = "./modules/repository"
-  name          = "erlang"
-  cookbook_team = github_team.erlang.id
+  source                 = "./modules/repository"
+  name                   = "erlang"
+  cookbook_team          = github_team.erlang.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "erlang" {

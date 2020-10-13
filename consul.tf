@@ -1,7 +1,8 @@
 module "consul" {
-  source        = "./modules/repository"
-  name          = "consul"
-  cookbook_team = github_team.consul.id
+  source                 = "./modules/repository"
+  name                   = "consul"
+  cookbook_team          = github_team.consul.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "consul" {

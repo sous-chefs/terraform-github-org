@@ -1,8 +1,9 @@
 module "mongodb" {
-  source        = "./modules/repository"
-  name          = "mongodb"
-  cookbook_team = github_team.mongodb.id
-  homepage_url  = "https://supermarket.chef.io/cookbooks/sc-mongodb"
+  source                 = "./modules/repository"
+  name                   = "mongodb"
+  cookbook_team          = github_team.mongodb.id
+  homepage_url           = "https://supermarket.chef.io/cookbooks/sc-mongodb"
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "mongodb" {

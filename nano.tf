@@ -1,7 +1,8 @@
 module "nano" {
-  source        = "./modules/repository"
-  name          = "nano"
-  cookbook_team = github_team.nano.id
+  source                 = "./modules/repository"
+  name                   = "nano"
+  cookbook_team          = github_team.nano.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nano" {

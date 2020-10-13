@@ -1,7 +1,8 @@
 module "percona" {
-  source        = "./modules/repository"
-  name          = "percona"
-  cookbook_team = github_team.percona.id
+  source                 = "./modules/repository"
+  name                   = "percona"
+  cookbook_team          = github_team.percona.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "percona" {

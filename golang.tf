@@ -1,7 +1,8 @@
 module "golang" {
-  source        = "./modules/repository"
-  name          = "golang"
-  cookbook_team = github_team.golang.id
+  source                 = "./modules/repository"
+  name                   = "golang"
+  cookbook_team          = github_team.golang.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "golang" {

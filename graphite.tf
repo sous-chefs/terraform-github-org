@@ -1,7 +1,8 @@
 module "graphite" {
-  source        = "./modules/repository"
-  name          = "graphite"
-  cookbook_team = github_team.graphite.id
+  source                 = "./modules/repository"
+  name                   = "graphite"
+  cookbook_team          = github_team.graphite.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "graphite" {

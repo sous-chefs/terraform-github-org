@@ -1,8 +1,9 @@
 module "mysql" {
-  source        = "./modules/repository"
-  name          = "mysql"
-  description   = "Sous Chefs MySQL Cookbook"
-  cookbook_team = github_team.mysql.id
+  source                 = "./modules/repository"
+  name                   = "mysql"
+  description            = "Sous Chefs MySQL Cookbook"
+  cookbook_team          = github_team.mysql.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "mysql" {

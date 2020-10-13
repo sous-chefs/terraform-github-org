@@ -1,7 +1,8 @@
 module "pyenv" {
-  source        = "./modules/repository"
-  name          = "pyenv"
-  cookbook_team = github_team.pyenv.id
+  source                 = "./modules/repository"
+  name                   = "pyenv"
+  cookbook_team          = github_team.pyenv.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "pyenv" {

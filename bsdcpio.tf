@@ -1,7 +1,8 @@
 module "bsdcpio" {
-  source        = "./modules/repository"
-  name          = "bsdcpio"
-  cookbook_team = github_team.bsdcpio.id
+  source                 = "./modules/repository"
+  name                   = "bsdcpio"
+  cookbook_team          = github_team.bsdcpio.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "bsdcpio" {

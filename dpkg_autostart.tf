@@ -1,7 +1,8 @@
 module "dpkg_autostart" {
-  source        = "./modules/repository"
-  name          = "dpkg_autostart"
-  cookbook_team = github_team.dpkg_autostart.id
+  source                 = "./modules/repository"
+  name                   = "dpkg_autostart"
+  cookbook_team          = github_team.dpkg_autostart.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "dpkg_autostart" {

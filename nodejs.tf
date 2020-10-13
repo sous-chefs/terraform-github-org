@@ -1,7 +1,8 @@
 module "nodejs" {
-  source        = "./modules/repository"
-  name          = "nodejs"
-  cookbook_team = github_team.nodejs.id
+  source                 = "./modules/repository"
+  name                   = "nodejs"
+  cookbook_team          = github_team.nodejs.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nodejs" {

@@ -1,7 +1,8 @@
 module "nginx" {
-  source        = "./modules/repository"
-  name          = "nginx"
-  cookbook_team = github_team.nginx.id
+  source                 = "./modules/repository"
+  name                   = "nginx"
+  cookbook_team          = github_team.nginx.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nginx" {

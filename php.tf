@@ -1,7 +1,8 @@
 module "php" {
-  source        = "./modules/repository"
-  name          = "php"
-  cookbook_team = github_team.php.id
+  source                 = "./modules/repository"
+  name                   = "php"
+  cookbook_team          = github_team.php.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "php" {

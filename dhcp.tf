@@ -1,7 +1,8 @@
 module "dhcp" {
-  source        = "./modules/repository"
-  name          = "dhcp"
-  cookbook_team = github_team.dhcp.id
+  source                 = "./modules/repository"
+  name                   = "dhcp"
+  cookbook_team          = github_team.dhcp.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "dhcp" {

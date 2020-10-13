@@ -1,8 +1,9 @@
 module "confluence" {
-  source        = "./modules/repository"
-  name          = "confluence"
-  description   = "Sous Chefs confluence Cookbook"
-  cookbook_team = github_team.confluence.id
+  source                 = "./modules/repository"
+  name                   = "confluence"
+  description            = "Sous Chefs confluence Cookbook"
+  cookbook_team          = github_team.confluence.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "confluence" {

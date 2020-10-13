@@ -1,7 +1,8 @@
 module "reprepro" {
-  source        = "./modules/repository"
-  name          = "reprepro"
-  cookbook_team = github_team.reprepro.id
+  source                 = "./modules/repository"
+  name                   = "reprepro"
+  cookbook_team          = github_team.reprepro.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "reprepro" {

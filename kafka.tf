@@ -1,7 +1,8 @@
 module "kafka" {
-  source        = "./modules/repository"
-  name          = "kafka"
-  cookbook_team = github_team.kafka.id
+  source                 = "./modules/repository"
+  name                   = "kafka"
+  cookbook_team          = github_team.kafka.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "kafka" {

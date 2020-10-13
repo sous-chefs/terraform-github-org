@@ -1,7 +1,8 @@
 module "postfix" {
-  source        = "./modules/repository"
-  name          = "postfix"
-  cookbook_team = github_team.postfix.id
+  source                 = "./modules/repository"
+  name                   = "postfix"
+  cookbook_team          = github_team.postfix.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "postfix" {

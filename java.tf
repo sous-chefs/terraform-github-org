@@ -1,7 +1,8 @@
 module "java" {
-  source        = "./modules/repository"
-  name          = "java"
-  cookbook_team = github_team.java.id
+  source                 = "./modules/repository"
+  name                   = "java"
+  cookbook_team          = github_team.java.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "java" {

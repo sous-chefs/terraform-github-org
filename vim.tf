@@ -1,7 +1,8 @@
 module "vim" {
-  source        = "./modules/repository"
-  name          = "vim"
-  cookbook_team = github_team.vim.id
+  source                 = "./modules/repository"
+  name                   = "vim"
+  cookbook_team          = github_team.vim.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "vim" {

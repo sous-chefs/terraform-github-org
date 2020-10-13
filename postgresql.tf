@@ -1,7 +1,8 @@
 module "postgresql" {
-  source        = "./modules/repository"
-  name          = "postgresql"
-  cookbook_team = github_team.postgresql.id
+  source                 = "./modules/repository"
+  name                   = "postgresql"
+  cookbook_team          = github_team.postgresql.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "postgresql" {

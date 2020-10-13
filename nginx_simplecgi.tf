@@ -1,7 +1,8 @@
 module "nginx_simplecgi" {
-  source        = "./modules/repository"
-  name          = "nginx_simplecgi"
-  cookbook_team = github_team.nginx_simplecgi.id
+  source                 = "./modules/repository"
+  name                   = "nginx_simplecgi"
+  cookbook_team          = github_team.nginx_simplecgi.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nginx_simplecgi" {

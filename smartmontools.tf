@@ -1,7 +1,8 @@
 module "smartmontools" {
-  source        = "./modules/repository"
-  name          = "smartmontools"
-  cookbook_team = github_team.smartmontools.id
+  source                 = "./modules/repository"
+  name                   = "smartmontools"
+  cookbook_team          = github_team.smartmontools.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "smartmontools" {
