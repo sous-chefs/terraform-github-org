@@ -1,7 +1,8 @@
 module "atom" {
-  source        = "./modules/repository"
-  name          = "atom"
-  cookbook_team = github_team.atom.id
+  source                 = "./modules/repository"
+  name                   = "atom"
+  cookbook_team          = github_team.atom.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "atom" {

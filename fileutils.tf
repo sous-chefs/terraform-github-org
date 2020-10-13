@@ -1,7 +1,8 @@
 module "fileutils" {
-  source        = "./modules/repository"
-  name          = "fileutils"
-  cookbook_team = github_team.fileutils.id
+  source                 = "./modules/repository"
+  name                   = "fileutils"
+  cookbook_team          = github_team.fileutils.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "fileutils" {

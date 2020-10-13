@@ -1,7 +1,8 @@
 module "docker" {
-  source        = "./modules/repository"
-  name          = "docker"
-  cookbook_team = github_team.docker.id
+  source                 = "./modules/repository"
+  name                   = "docker"
+  cookbook_team          = github_team.docker.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "docker" {

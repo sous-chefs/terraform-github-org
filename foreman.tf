@@ -1,7 +1,8 @@
 module "foreman" {
-  source        = "./modules/repository"
-  name          = "foreman"
-  cookbook_team = github_team.foreman.id
+  source                 = "./modules/repository"
+  name                   = "foreman"
+  cookbook_team          = github_team.foreman.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "foreman" {

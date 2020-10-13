@@ -1,7 +1,8 @@
 module "filesystem" {
-  source        = "./modules/repository"
-  name          = "filesystem"
-  cookbook_team = github_team.filesystem.id
+  source                 = "./modules/repository"
+  name                   = "filesystem"
+  cookbook_team          = github_team.filesystem.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "filesystem" {

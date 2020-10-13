@@ -1,9 +1,10 @@
 module "line" {
-  source        = "./modules/repository"
-  name          = "line"
-  description   = "Development repository for the line cookbook"
-  homepage_url  = "https://supermarket.chef.io/cookbooks/line"
-  cookbook_team = github_team.line.id
+  source                 = "./modules/repository"
+  name                   = "line"
+  description            = "Development repository for the line cookbook"
+  homepage_url           = "https://supermarket.chef.io/cookbooks/line"
+  cookbook_team          = github_team.line.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "line" {

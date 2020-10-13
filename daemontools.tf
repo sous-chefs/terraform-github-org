@@ -1,7 +1,8 @@
 module "daemontools" {
-  source        = "./modules/repository"
-  name          = "daemontools"
-  cookbook_team = github_team.daemontools.id
+  source                 = "./modules/repository"
+  name                   = "daemontools"
+  cookbook_team          = github_team.daemontools.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "daemontools" {

@@ -1,7 +1,8 @@
 module "cpu" {
-  source        = "./modules/repository"
-  name          = "cpu"
-  cookbook_team = github_team.cpu.id
+  source                 = "./modules/repository"
+  name                   = "cpu"
+  cookbook_team          = github_team.cpu.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "cpu" {

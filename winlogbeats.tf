@@ -1,7 +1,8 @@
 module "winlogbeats" {
-  source        = "./modules/repository"
-  name          = "winlogbeats"
-  cookbook_team = github_team.winlogbeats.id
+  source                 = "./modules/repository"
+  name                   = "winlogbeats"
+  cookbook_team          = github_team.winlogbeats.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "winlogbeats" {

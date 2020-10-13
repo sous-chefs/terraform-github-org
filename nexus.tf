@@ -1,7 +1,8 @@
 module "nexus" {
-  source        = "./modules/repository"
-  name          = "nexus"
-  cookbook_team = github_team.nexus.id
+  source                 = "./modules/repository"
+  name                   = "nexus"
+  cookbook_team          = github_team.nexus.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nexus" {

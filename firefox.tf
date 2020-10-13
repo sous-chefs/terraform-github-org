@@ -1,7 +1,8 @@
 module "firefox" {
-  source        = "./modules/repository"
-  name          = "firefox"
-  cookbook_team = github_team.firefox.id
+  source                 = "./modules/repository"
+  name                   = "firefox"
+  cookbook_team          = github_team.firefox.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "firefox" {

@@ -1,7 +1,8 @@
 module "locales" {
-  source        = "./modules/repository"
-  name          = "locales"
-  cookbook_team = github_team.locales.id
+  source                 = "./modules/repository"
+  name                   = "locales"
+  cookbook_team          = github_team.locales.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "locales" {

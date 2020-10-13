@@ -1,8 +1,9 @@
 module "redisio" {
-  source        = "./modules/repository"
-  name          = "redisio"
-  description   = "Development repository for the redisio cookbook"
-  cookbook_team = github_team.redisio.id
+  source                 = "./modules/repository"
+  name                   = "redisio"
+  description            = "Development repository for the redisio cookbook"
+  cookbook_team          = github_team.redisio.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "redisio" {

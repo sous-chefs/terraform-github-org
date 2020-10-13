@@ -1,7 +1,8 @@
 module "atlantis" {
-  source        = "./modules/repository"
-  name          = "atlantis"
-  cookbook_team = github_team.atlantis.id
+  source                 = "./modules/repository"
+  name                   = "atlantis"
+  cookbook_team          = github_team.atlantis.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "atlantis" {

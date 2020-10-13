@@ -1,7 +1,8 @@
 module "varnish" {
-  source        = "./modules/repository"
-  name          = "varnish"
-  cookbook_team = github_team.varnish.id
+  source                 = "./modules/repository"
+  name                   = "varnish"
+  cookbook_team          = github_team.varnish.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "varnish" {

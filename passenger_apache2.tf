@@ -1,7 +1,8 @@
 module "passenger_apache2" {
-  source        = "./modules/repository"
-  name          = "passenger_apache2"
-  cookbook_team = github_team.passenger_apache2.id
+  source                 = "./modules/repository"
+  name                   = "passenger_apache2"
+  cookbook_team          = github_team.passenger_apache2.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "passenger_apache2" {

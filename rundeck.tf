@@ -1,8 +1,9 @@
 module "rundeck" {
-  source        = "./modules/repository"
-  name          = "rundeck"
-  description   = "Development repository for the Rundeck cookbook"
-  cookbook_team = github_team.rundeck.id
+  source                 = "./modules/repository"
+  name                   = "rundeck"
+  description            = "Development repository for the Rundeck cookbook"
+  cookbook_team          = github_team.rundeck.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "rundeck" {

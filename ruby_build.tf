@@ -1,7 +1,8 @@
 module "ruby_build" {
-  source        = "./modules/repository"
-  name          = "ruby_build"
-  cookbook_team = github_team.ruby_build.id
+  source                 = "./modules/repository"
+  name                   = "ruby_build"
+  cookbook_team          = github_team.ruby_build.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "ruby_build" {

@@ -1,7 +1,8 @@
 module "npm_lazy" {
-  source        = "./modules/repository"
-  name          = "npm_lazy"
-  cookbook_team = github_team.npm_lazy.id
+  source                 = "./modules/repository"
+  name                   = "npm_lazy"
+  cookbook_team          = github_team.npm_lazy.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "npm_lazy" {

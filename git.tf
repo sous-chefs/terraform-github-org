@@ -1,7 +1,8 @@
 module "git" {
-  source        = "./modules/repository"
-  name          = "git"
-  cookbook_team = github_team.git.id
+  source                 = "./modules/repository"
+  name                   = "git"
+  cookbook_team          = github_team.git.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "git" {

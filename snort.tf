@@ -1,7 +1,8 @@
 module "snort" {
-  source        = "./modules/repository"
-  name          = "snort"
-  cookbook_team = github_team.snort.id
+  source                 = "./modules/repository"
+  name                   = "snort"
+  cookbook_team          = github_team.snort.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "snort" {

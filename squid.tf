@@ -1,7 +1,8 @@
 module "squid" {
-  source        = "./modules/repository"
-  name          = "squid"
-  cookbook_team = github_team.squid.id
+  source                 = "./modules/repository"
+  name                   = "squid"
+  cookbook_team          = github_team.squid.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "squid" {

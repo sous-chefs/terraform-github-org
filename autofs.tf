@@ -1,7 +1,8 @@
 module "autofs" {
-  source        = "./modules/repository"
-  name          = "autofs"
-  cookbook_team = github_team.autofs.id
+  source                 = "./modules/repository"
+  name                   = "autofs"
+  cookbook_team          = github_team.autofs.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "autofs" {

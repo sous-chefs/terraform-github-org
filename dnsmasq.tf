@@ -1,7 +1,8 @@
 module "dnsmasq" {
-  source        = "./modules/repository"
-  name          = "dnsmasq"
-  cookbook_team = github_team.dnsmasq.id
+  source                 = "./modules/repository"
+  name                   = "dnsmasq"
+  cookbook_team          = github_team.dnsmasq.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "dnsmasq" {

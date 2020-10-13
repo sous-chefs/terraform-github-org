@@ -1,7 +1,8 @@
 module "elixir" {
-  source        = "./modules/repository"
-  name          = "elixir"
-  cookbook_team = github_team.elixir.id
+  source                 = "./modules/repository"
+  name                   = "elixir"
+  cookbook_team          = github_team.elixir.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "elixir" {

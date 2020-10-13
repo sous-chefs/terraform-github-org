@@ -1,7 +1,8 @@
 module "htpasswd" {
-  source        = "./modules/repository"
-  name          = "htpasswd"
-  cookbook_team = github_team.htpasswd.id
+  source                 = "./modules/repository"
+  name                   = "htpasswd"
+  cookbook_team          = github_team.htpasswd.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "htpasswd" {

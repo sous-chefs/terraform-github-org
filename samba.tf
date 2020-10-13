@@ -1,7 +1,8 @@
 module "samba" {
-  source        = "./modules/repository"
-  name          = "samba"
-  cookbook_team = github_team.samba.id
+  source                 = "./modules/repository"
+  name                   = "samba"
+  cookbook_team          = github_team.samba.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "samba" {

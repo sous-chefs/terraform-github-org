@@ -1,7 +1,8 @@
 module "ossec" {
-  source        = "./modules/repository"
-  name          = "ossec"
-  cookbook_team = github_team.ossec.id
+  source                 = "./modules/repository"
+  name                   = "ossec"
+  cookbook_team          = github_team.ossec.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "ossec" {

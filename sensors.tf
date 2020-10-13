@@ -1,7 +1,8 @@
 module "sensors" {
-  source        = "./modules/repository"
-  name          = "sensors"
-  cookbook_team = github_team.sensors.id
+  source                 = "./modules/repository"
+  name                   = "sensors"
+  cookbook_team          = github_team.sensors.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "sensors" {

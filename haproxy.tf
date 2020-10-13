@@ -1,7 +1,8 @@
 module "haproxy" {
-  source        = "./modules/repository"
-  name          = "haproxy"
-  cookbook_team = github_team.haproxy.id
+  source                 = "./modules/repository"
+  name                   = "haproxy"
+  cookbook_team          = github_team.haproxy.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "haproxy" {

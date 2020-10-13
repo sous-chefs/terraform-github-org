@@ -1,7 +1,8 @@
 module "unbound" {
-  source        = "./modules/repository"
-  name          = "unbound"
-  cookbook_team = github_team.unbound.id
+  source                 = "./modules/repository"
+  name                   = "unbound"
+  cookbook_team          = github_team.unbound.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "unbound" {

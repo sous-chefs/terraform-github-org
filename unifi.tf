@@ -1,7 +1,8 @@
 module "unifi" {
-  source        = "./modules/repository"
-  name          = "unifi"
-  cookbook_team = github_team.unifi.id
+  source                 = "./modules/repository"
+  name                   = "unifi"
+  cookbook_team          = github_team.unifi.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "unifi" {

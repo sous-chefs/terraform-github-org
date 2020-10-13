@@ -1,7 +1,8 @@
 module "keepalived" {
-  source        = "./modules/repository"
-  name          = "keepalived"
-  cookbook_team = github_team.keepalived.id
+  source                 = "./modules/repository"
+  name                   = "keepalived"
+  cookbook_team          = github_team.keepalived.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "keepalived" {

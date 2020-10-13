@@ -1,7 +1,8 @@
 module "tomcat" {
-  source        = "./modules/repository"
-  name          = "tomcat"
-  cookbook_team = github_team.tomcat.id
+  source                 = "./modules/repository"
+  name                   = "tomcat"
+  cookbook_team          = github_team.tomcat.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "tomcat" {

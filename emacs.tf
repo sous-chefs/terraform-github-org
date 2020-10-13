@@ -1,7 +1,8 @@
 module "emacs" {
-  source        = "./modules/repository"
-  name          = "emacs"
-  cookbook_team = github_team.emacs.id
+  source                 = "./modules/repository"
+  name                   = "emacs"
+  cookbook_team          = github_team.emacs.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "emacs" {

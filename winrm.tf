@@ -1,9 +1,10 @@
 module "winrm" {
-  source        = "./modules/repository"
-  name          = "winrm"
-  homepage_url  = "https://supermarket.chef.io/cookbooks/winrm"
-  cookbook_team = github_team.winrm.id
-  status_checks = ["continuous-integration/appveyor/pr"]
+  source                 = "./modules/repository"
+  name                   = "winrm"
+  homepage_url           = "https://supermarket.chef.io/cookbooks/winrm"
+  cookbook_team          = github_team.winrm.id
+  status_checks          = ["continuous-integration/appveyor/pr"]
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "winrm" {

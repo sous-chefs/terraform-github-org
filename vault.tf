@@ -1,8 +1,9 @@
 module "vault" {
-  source        = "./modules/repository"
-  name          = "vault"
-  cookbook_team = github_team.vault.id
-  description   = "Development repository for the hashicorp-vault cookbook"
+  source                 = "./modules/repository"
+  name                   = "vault"
+  cookbook_team          = github_team.vault.id
+  description            = "Development repository for the hashicorp-vault cookbook"
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "vault" {

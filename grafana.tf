@@ -1,7 +1,8 @@
 module "grafana" {
-  source        = "./modules/repository"
-  name          = "grafana"
-  cookbook_team = github_team.grafana.id
+  source                 = "./modules/repository"
+  name                   = "grafana"
+  cookbook_team          = github_team.grafana.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "grafana" {

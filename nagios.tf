@@ -1,8 +1,9 @@
 module "nagios" {
-  source        = "./modules/repository"
-  name          = "nagios"
-  cookbook_team = github_team.nagios.id
-  has_wiki      = true
+  source                 = "./modules/repository"
+  name                   = "nagios"
+  cookbook_team          = github_team.nagios.id
+  has_wiki               = true
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nagios" {

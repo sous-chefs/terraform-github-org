@@ -1,7 +1,8 @@
 module "fail2ban" {
-  source        = "./modules/repository"
-  name          = "fail2ban"
-  cookbook_team = github_team.fail2ban.id
+  source                 = "./modules/repository"
+  name                   = "fail2ban"
+  cookbook_team          = github_team.fail2ban.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "fail2ban" {

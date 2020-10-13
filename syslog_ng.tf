@@ -1,7 +1,8 @@
 module "syslog_ng" {
-  source        = "./modules/repository"
-  name          = "syslog_ng"
-  cookbook_team = github_team.syslog_ng.id
+  source                 = "./modules/repository"
+  name                   = "syslog_ng"
+  cookbook_team          = github_team.syslog_ng.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "syslog_ng" {

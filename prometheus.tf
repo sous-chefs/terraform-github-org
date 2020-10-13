@@ -1,7 +1,8 @@
 module "prometheus" {
-  source        = "./modules/repository"
-  name          = "prometheus"
-  cookbook_team = github_team.prometheus.id
+  source                 = "./modules/repository"
+  name                   = "prometheus"
+  cookbook_team          = github_team.prometheus.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "prometheus" {

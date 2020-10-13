@@ -1,7 +1,8 @@
 module "mariadb" {
-  source        = "./modules/repository"
-  name          = "mariadb"
-  cookbook_team = github_team.mariadb.id
+  source                 = "./modules/repository"
+  name                   = "mariadb"
+  cookbook_team          = github_team.mariadb.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "mariadb" {

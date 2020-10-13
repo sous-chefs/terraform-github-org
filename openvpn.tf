@@ -1,7 +1,8 @@
 module "openvpn" {
-  source        = "./modules/repository"
-  name          = "openvpn"
-  cookbook_team = github_team.openvpn.id
+  source                 = "./modules/repository"
+  name                   = "openvpn"
+  cookbook_team          = github_team.openvpn.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "openvpn" {

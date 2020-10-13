@@ -1,8 +1,9 @@
 module "nrpe" {
-  source        = "./modules/repository"
-  name          = "nrpe"
-  description   = "Chef cookbook to install Nagios NRPE client"
-  cookbook_team = github_team.nrpe.id
+  source                 = "./modules/repository"
+  name                   = "nrpe"
+  description            = "Chef cookbook to install Nagios NRPE client"
+  cookbook_team          = github_team.nrpe.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "nrpe" {

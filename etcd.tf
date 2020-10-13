@@ -1,7 +1,8 @@
 module "etcd" {
-  source        = "./modules/repository"
-  name          = "etcd"
-  cookbook_team = github_team.etcd.id
+  source                 = "./modules/repository"
+  name                   = "etcd"
+  cookbook_team          = github_team.etcd.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "etcd" {

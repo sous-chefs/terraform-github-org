@@ -1,7 +1,8 @@
 module "transmission" {
-  source        = "./modules/repository"
-  name          = "transmission"
-  cookbook_team = github_team.transmission.id
+  source                 = "./modules/repository"
+  name                   = "transmission"
+  cookbook_team          = github_team.transmission.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "transmission" {

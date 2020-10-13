@@ -1,7 +1,8 @@
 module "control_groups" {
-  source        = "./modules/repository"
-  name          = "control_groups"
-  cookbook_team = github_team.control_groups.id
+  source                 = "./modules/repository"
+  name                   = "control_groups"
+  cookbook_team          = github_team.control_groups.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "control_groups" {

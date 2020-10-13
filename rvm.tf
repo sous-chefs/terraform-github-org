@@ -1,7 +1,8 @@
 module "rvm" {
-  source        = "./modules/repository"
-  name          = "rvm"
-  cookbook_team = github_team.rvm.id
+  source                 = "./modules/repository"
+  name                   = "rvm"
+  cookbook_team          = github_team.rvm.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "rvm" {

@@ -1,7 +1,8 @@
 module "kismet" {
-  source        = "./modules/repository"
-  name          = "kismet"
-  cookbook_team = github_team.kismet.id
+  source                 = "./modules/repository"
+  name                   = "kismet"
+  cookbook_team          = github_team.kismet.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "kismet" {

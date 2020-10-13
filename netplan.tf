@@ -1,7 +1,8 @@
 module "netplan" {
-  source        = "./modules/repository"
-  name          = "netplan"
-  cookbook_team = github_team.netplan.id
+  source                 = "./modules/repository"
+  name                   = "netplan"
+  cookbook_team          = github_team.netplan.id
+  label_validator_config = local.label_validator_config
 }
 
 resource "github_team" "netplan" {
