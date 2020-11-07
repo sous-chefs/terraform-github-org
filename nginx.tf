@@ -23,3 +23,8 @@ resource "github_team_membership" "nginx-maintainer-2" {
   role     = "maintainer"
 }
 
+resource "github_team_membership" "nginx-maintainer-3" {
+  team_id  = github_team.nginx.id
+  username = "bmhughes"
+  role     = "maintainer"
+}
