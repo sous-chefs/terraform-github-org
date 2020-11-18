@@ -139,7 +139,7 @@ resource "github_repository_webhook" "cookbook_supermarket_uploader" {
   count      = var.cookbook_auto_release_config.enabled ? 1 : 0
 
   configuration {
-    url          = var.cookbook_auto_release_config.cookbook_supermarket_uploader
+    url          = var.cookbook_auto_release_config.cookbook_supermarket_uploader_url
     content_type = "form"
     insecure_ssl = false
     secret       = var.cookbook_auto_release_config.secret
