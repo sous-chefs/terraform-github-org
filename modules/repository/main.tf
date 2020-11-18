@@ -74,8 +74,90 @@ resource "github_repository_webhook" "label_validator" {
     insecure_ssl = false
     secret       = var.label_validator_config.secret
   }
-
   active = true
-
   events = ["pull_request"]
+}
+
+resource "github_repository_webhook" "changelog_reset" {
+  repository = github_repository.repository.name
+  count      = var.changelog_reset_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.changelog_reset_config.url
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.changelog_reset_config.secret
+  }
+  active = true
+  events = ["release"]
+}
+
+resource "github_repository_webhook" "changelog_validator" {
+  repository = github_repository.repository.name
+  count      = var.changelog_validator_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.changelog_validator_config.url
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.changelog_validator_config.secret
+  }
+  active = true
+  events = ["pull_request"]
+}
+
+resource "github_repository_webhook" "cookbook_release_validator" {
+  repository = github_repository.repository.name
+  count      = var.cookbook_auto_release_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.cookbook_auto_release_config.cookbook_release_validator_url
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.cookbook_auto_release_config.secret
+  }
+  active = true
+  events = ["pull_request"]
+}
+
+resource "github_repository_webhook" "cookbook_release_creator" {
+  repository = github_repository.repository.name
+  count      = var.cookbook_auto_release_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.cookbook_auto_release_config.cookbook_release_creator_url
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.cookbook_auto_release_config.secret
+  }
+  active = true
+  events = ["pull_request"]
+}
+
+resource "github_repository_webhook" "cookbook_supermarket_uploader" {
+  repository = github_repository.repository.name
+  count      = var.cookbook_auto_release_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.cookbook_auto_release_config.cookbook_supermarket_uploader
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.cookbook_auto_release_config.secret
+  }
+  active = true
+  events = ["deployment"]
+}
+
+resource "github_repository_webhook" "deployment_status_slack_notifier" {
+  repository = github_repository.repository.name
+  count      = var.cookbook_auto_release_config.enabled ? 1 : 0
+
+  configuration {
+    url          = var.cookbook_auto_release_config.deployment_status_slack_notifier_url
+    content_type = "form"
+    insecure_ssl = false
+    secret       = var.cookbook_auto_release_config.secret
+  }
+  active = true
+  events = ["deployment_status"]
 }
