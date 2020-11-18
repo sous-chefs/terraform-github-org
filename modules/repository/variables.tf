@@ -98,3 +98,20 @@ variable "label_validator_config" {
     enabled = false
   }
 }
+variable "changelog_reset_config" {
+  default = {
+    enabled = false
+  }
+}
+
+variable "changelog_validator_config" {
+  default = {
+    enabled = false
+  }
+}
+
+variable "cookbook_auto_release_config" {
+  default = {
+    enabled = false
+  }
+}
