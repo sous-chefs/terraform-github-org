@@ -33,9 +33,9 @@ variable "status_checks" {
 
 locals {
   default_checks  = var.status_checks
-  changelog_check = "${var.changelog_validator_config.enabled ? "Changelog Validator" : ""}"
-  metadata_check  = "${var.cookbook_auto_release_config.enabled ? "Metadata Version Validator" : ""}"
-  label_check     = "${var.label_validator_config.enabled ? "Release Label Validator" : ""}"
+  changelog_check = ["${var.changelog_validator_config.enabled ? "Changelog Validator" : ""}"]
+  metadata_check  = ["${var.cookbook_auto_release_config.enabled ? "Metadata Version Validator" : ""}"]
+  label_check     = ["${var.label_validator_config.enabled ? "Release Label Validator" : ""}"]
   status_checks   = compact(concat(local.default_checks, local.changelog_check, local.metadata_check, local.label_check))
 }
 
