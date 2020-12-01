@@ -19,3 +19,9 @@ resource "github_team_membership" "jenkins-maintainer-1" {
   username = "ramereth"
   role     = "maintainer"
 }
+
+resource "github_team_membership" "jenkins-maintainer-2" {
+  team_id  = github_team.jenkins.id
+  username = "nuclearsandwich"
+  role     = "maintainer"
+}
