@@ -58,6 +58,29 @@ resource "github_branch_protection" "repository_master" {
 
 }
 
+resource "github_branch_protection" "repository_main" {
+  # this is a bit of a hack to allow people to create repositories uninitialized
+  # and then add branch protection later. The use cases are mostly around needing
+  # to create "forked" private repositories
+  count = var.auto_init ? 1 : 0
+  repository     = var.name
+  branch         = "main"
+  enforce_admins = var.enforce_admins
+  # when a repo is being initialized/created you can run into race conditions by adding an explicit depends we force the repo to be created before it attempts to add branch protection
+  depends_on = [
+    github_repository.repository,
+  ]
+  required_status_checks {
+    strict   = var.require_ci_pass
+    contexts = local.status_checks
+  }
+  required_pull_request_reviews {
+    dismiss_stale_reviews      = var.dismiss_stale_reviews
+    require_code_owner_reviews = var.require_code_owner_reviews
+  }
+}
+
+
 resource "github_team_repository" "restricted_access" {
   team_id    = var.cookbook_team
   repository = github_repository.repository.name
