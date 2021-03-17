@@ -18,7 +18,7 @@ resource "github_repository" "repository" {
   # this automatically creates a commit and pushes to master and is needed
   # because your can't add branch protection for an uninitialized repo
   # since the branch will not exist yet. It is only relevant during repo
-  # creation from github api side but we also use it to determine if branch
+  # creation from GitHub API side but we also use it to determine if branch
   # protections should be enabled.
   auto_init = var.auto_init
 
@@ -31,20 +31,15 @@ resource "github_repository" "repository" {
   }
 }
 
-resource "github_branch_protection" "repository_master" {
+resource "github_branch_protection_v3" "repository_master" {
   # this is a bit of a hack to allow people to create repositories uninitialized
   # and then add branch protection later. The use cases are mostly around needing
   # to create "forked" private repositories
   count = var.auto_init ? 1 : 0
 
-  repository     = var.name
+  repository     = github_repository.repository.name
   branch         = "master"
   enforce_admins = var.enforce_admins
-
-  # when a repo is being initialized/created you can run into race conditions by adding an explicit depends we force the repo to be created before it attempts to add branch protection
-  depends_on = [
-    github_repository.repository,
-  ]
 
   required_status_checks {
     strict   = var.require_ci_pass
