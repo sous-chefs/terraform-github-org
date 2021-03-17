@@ -31,14 +31,14 @@ resource "github_repository" "repository" {
   }
 }
 
-resource "github_branch_protection" "repository_master" {
+resource "github_branch_protection_v3" "repository_master" {
   # this is a bit of a hack to allow people to create repositories uninitialized
   # and then add branch protection later. The use cases are mostly around needing
   # to create "forked" private repositories
   count = var.auto_init ? 1 : 0
 
-  repository_id  = github_repository.repository.id
-  pattern        = "master"
+  repository     = github_repository.repository.name
+  branch         = "master"
   enforce_admins = var.enforce_admins
 
   required_status_checks {
